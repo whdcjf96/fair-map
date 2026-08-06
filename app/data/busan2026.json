@@ -1,0 +1,2876 @@
+{
+ "id": "busan-liquor-2026",
+ "title": "2026 부산국제주류박람회",
+ "venue": "벡스코 제1전시장 3홀",
+ "source": "https://bilie.kr/sub/booth.php",
+ "image": "data/map.png",
+ "imageSize": [
+  1000,
+  1400
+ ],
+ "boothSizeM": 3,
+ "booths": [
+  {
+   "booth": "A01",
+   "rects": [
+    {
+     "x": 44,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "유어와인즈 이탈리아 1위 메이커 모스카토",
+   "desc": "이탈리아 1위 와인메이커 모스카토 지아니돌리아\r\n스페인 쎄로아논, 파논할마 소비뇽블랑",
+   "url": "https://www.instagram.com/yourwines_official/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_gZRDk2qK_dae1e18f53adc7d99af6916717a0225323514300_600x600.png",
+   "officialName": "유어와인즈",
+   "category": "와인",
+   "short": "유어와인즈"
+  },
+  {
+   "booth": "A02",
+   "rects": [
+    {
+     "x": 44,
+     "y": 1208,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "귀리귀안1894",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "귀리귀안"
+  },
+  {
+   "booth": "A03",
+   "rects": [
+    {
+     "x": 44,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "동백1917양조장",
+   "desc": "2019년 소규모 양조장으로 출발해, 지역특산주로 망미동에 위치한 양조장과 시음장",
+   "url": "https://smartstore.naver.com/busandongbaek1917",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_J4foFDj0_7dad74bea607a170043ff3dfff6c7880cee2f4c4_600x600.png",
+   "officialName": "농업회사법인㈜동백1917",
+   "category": "전통주·막걸리",
+   "short": "동백1917"
+  },
+  {
+   "booth": "A04",
+   "rects": [
+    {
+     "x": 44,
+     "y": 979,
+     "w": 37,
+     "h": 75
+    }
+   ],
+   "name": "헬레닉와인",
+   "desc": "세계에서 가장 오래된 와인 산지 중 하나인 그리스 와인의 매력을 한국에 알리고 있습니다",
+   "url": "https://www.hellenicwine.co.kr/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnVJ7Y9OSZ_XqQbJEEX3cb9lW1xiXDw5ihv6cbQGHtaE6dGjQVyuhhykaAMYg_aem_ZCQA6SHFjN6FrIpdHD7oZQ",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_6RpkQjOC_a48a644c06a7ce32f2f3c6dc743cab3dc99355f7_600x600.png",
+   "officialName": "헬레닉 와인",
+   "category": "와인",
+   "short": "헬레닉와인"
+  },
+  {
+   "booth": "A06",
+   "rects": [
+    {
+     "x": 44,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "아미 AMI",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "아미"
+  },
+  {
+   "booth": "A07",
+   "rects": [
+    {
+     "x": 44,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "Tenuta il Falchetto",
+   "desc": "이탈리아 피에몬테 카넬리 지역의 정수 고산지대의 프리미엄 와인 수입사",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_Fb6cjZtV_f4b40d3420921c71fc32757fc8c30cd762acc204_600x600.png",
+   "officialName": "Tenuta il Falchetto",
+   "category": "와인",
+   "short": "Falchetto"
+  },
+  {
+   "booth": "A08",
+   "rects": [
+    {
+     "x": 44,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "EYZ 아이즈",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "EYZ"
+  },
+  {
+   "booth": "A09",
+   "rects": [
+    {
+     "x": 44,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "댕댕이베이커리",
+   "desc": "펫친구들을 위한 건강한 펫베이커리\r\n황태와오트밀을 주재료로 하나하나 손으로 직접만드는 수제간",
+   "url": "m.smartstore.naver.com/ddbakery",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_wyI7p9zs_0b63dfffe5f94a831d7c5e49c9c7d26c06dc9b30_600x600.png",
+   "officialName": "댕댕이베이커리",
+   "category": "안주·푸드",
+   "short": "댕댕이빵"
+  },
+  {
+   "booth": "A10",
+   "rects": [
+    {
+     "x": 44,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "메소스 진저비어 / (주)퍼스",
+   "desc": "호주 오리지널 알콜 진저비어 국내 첫 출시 !",
+   "url": "https://www.instagram.com/matsos_korea/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_Qus7S2a8_3bb06bd5fd038de8d273d0b5881885a7d5d84352_600x600.png",
+   "officialName": "㈜퍼스 메소스 진저비어",
+   "category": "사이더·미드",
+   "short": "메소스진저"
+  },
+  {
+   "booth": "A11",
+   "rects": [
+    {
+     "x": 44,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "농업회사법인 맑은내일 주식회사",
+   "desc": "1945년 '사화정미소'를 시작으로 3대째 가업을 이어오고 있는 창원의 대표 양조장 입니다",
+   "url": "http://www.malgeunaeil.co.kr/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_ZMmeUGxS_0019820ded74dd51d23bceb2f24a340109485790_600x600.png",
+   "officialName": "농업회사법인맑은내일㈜",
+   "category": "전통주·막걸리",
+   "short": "맑은내일"
+  },
+  {
+   "booth": "A12",
+   "rects": [
+    {
+     "x": 44,
+     "y": 520,
+     "w": 37,
+     "h": 75
+    }
+   ],
+   "name": "향기품은수울성",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "수울성"
+  },
+  {
+   "booth": "A14",
+   "rects": [
+    {
+     "x": 82,
+     "y": 286,
+     "w": 151,
+     "h": 37
+    },
+    {
+     "x": 44,
+     "y": 324,
+     "w": 37,
+     "h": 152
+    }
+   ],
+   "name": "링크업 시크릿 팝업",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "링크업"
+  },
+  {
+   "booth": "B01",
+   "rects": [
+    {
+     "x": 120,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "꿀술 양조장 - 코아베스트",
+   "desc": "꿀술",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_TKLGROJq_d108a6e5f852235579046f34d03174bb3fe1aab3_600x600.png",
+   "officialName": "농업회사법인(주)코아베스트",
+   "category": "사이더·미드",
+   "short": "꿀술양조장"
+  },
+  {
+   "booth": "B02",
+   "rects": [
+    {
+     "x": 158,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "ANES 주식회사 시오",
+   "desc": "와인을 더 쉽고 편리하게 즐길 수 있는 악세사리 및 감성 소품을 생산 판매하고 있습니다.",
+   "url": "www.anes.kr",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_mXOK245z_dbd8fb2f02c482e0ca269d25f2cf32c0ebf9d810_600x600.jpg",
+   "officialName": "ANES",
+   "category": "주류수입·유통",
+   "short": "ANES시오"
+  },
+  {
+   "booth": "B03",
+   "rects": [
+    {
+     "x": 120,
+     "y": 1208,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "별길 와이너리",
+   "desc": "2010년 부터 영천서 직접재배한 포도로 레드 화이트 로제 아이스 4종의 와인을 생산중",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_K67thPXw_1099ca54245368c60fa7cd13b917a65c1a31f325_600x600.png",
+   "officialName": "별길 와이너리",
+   "category": "와인",
+   "short": "별길와이너리"
+  },
+  {
+   "booth": "B04",
+   "rects": [
+    {
+     "x": 158,
+     "y": 1208,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "준앤폴초이스",
+   "desc": "독일의 리큐르 티핀과 슈슈, 커피크림, 아스바흐 브랜디, 스피릿, 스페인와인과 식품",
+   "url": "www.junandpaul.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_hCEv4mKF_1ef77472bfffcea8f1f9d5d128b923147ccd3b43_600x600.png",
+   "officialName": "준앤폴초이스",
+   "category": "주류수입·유통",
+   "short": "준앤폴초이스"
+  },
+  {
+   "booth": "B05",
+   "rects": [
+    {
+     "x": 120,
+     "y": 1132,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "대밭고을 / 자연이 빚은 대나무 전통주",
+   "desc": "직접 가꾼 10만평 대숲의 정성을 담아, 직접 채취한 대나무 원료로 빚은 프리미엄 전통주",
+   "url": "https://smartstore.naver.com/bamboosul",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_gp0qai21_795bfe7c3f8ad3d7d934523d24bffaad73beca23_600x600.png",
+   "officialName": "대밭고을 영농조합법인",
+   "category": "전통주·막걸리",
+   "short": "대밭고을"
+  },
+  {
+   "booth": "B07",
+   "rects": [
+    {
+     "x": 120,
+     "y": 1093,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "조은술도구",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "조은술도구"
+  },
+  {
+   "booth": "B09",
+   "rects": [
+    {
+     "x": 120,
+     "y": 1017,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "문화재·명인 조옥화 안동소주",
+   "desc": "문화재와 명인 2가지 타이틀을 동시 보유한 대한민국 대표 안동소주 입니다.",
+   "url": "www.andongsoju.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_XftLeAId_b9a7718ddae8ecc7a25ca251624211c507688a3f_600x600.png",
+   "officialName": "문화재·명인 조옥화 안동소주 (민속주 안동소주)",
+   "category": "전통주·막걸리",
+   "short": "조옥화소주"
+  },
+  {
+   "booth": "B11",
+   "rects": [
+    {
+     "x": 120,
+     "y": 979,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "블루와인컴퍼니",
+   "desc": "3대가 귀농하여 함께 하는 가족운영 와이너리 입니다.",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_7ODHg1v3_c33ca23edd62a075b09a1e833f9633e4ccf2b2a6_600x600.png",
+   "officialName": "블루와인컴퍼니",
+   "category": "와인",
+   "short": "블루와인"
+  },
+  {
+   "booth": "B12",
+   "rects": [
+    {
+     "x": 158,
+     "y": 979,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "소두방양조",
+   "desc": "부산 기장군 정관읍에 위치하고 있으며\r\n전통누룩으로 발효한 스파클링막걸리 만들고 있습니다.",
+   "url": "https://m.smartstore.naver.com/sodoobang",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_FxDAHbq4_f64740a1d28e62fc8a7a02b50d93767ecc1421f8_600x600.png",
+   "officialName": "소두방양조",
+   "category": "전통주·막걸리",
+   "short": "소두방양조"
+  },
+  {
+   "booth": "B13",
+   "rects": [
+    {
+     "x": 120,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "농담(農談)브루어리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "농담브루어리"
+  },
+  {
+   "booth": "B14",
+   "rects": [
+    {
+     "x": 158,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "도갓집 the brewery dogatjip",
+   "desc": "전남 영암에서 3대째 술을 빚는 도가 , 도갓집입니다\r\n술을 빚고 술이 익기를 기다리며",
+   "url": "https://www.instagram.com/do_god_jip/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_5mqrnE9f_6d3fd6fb848f8190372bb85f5c70dbe5c8aa19a7_600x600.png",
+   "officialName": "도갓집",
+   "category": "전통주·막걸리",
+   "short": "도갓집"
+  },
+  {
+   "booth": "B15",
+   "rects": [
+    {
+     "x": 120,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "비틀도가",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "비틀도가"
+  },
+  {
+   "booth": "B16",
+   "rects": [
+    {
+     "x": 158,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "젤코바와이너리(홍시와인)",
+   "desc": "자연을 담은 와인을 만들려고 노력하는 1급 주조사가 운영하는 와이너리입니다.",
+   "url": "https://smartstore.naver.com/meouruwinezelkova",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_eHaRyvW2_82f2f4cb1a6515e74a9ada7d96a6a9a7404a6350_600x600.png",
+   "officialName": "젤코바와이너리",
+   "category": "와인",
+   "short": "젤코바와인"
+  },
+  {
+   "booth": "B17",
+   "rects": [
+    {
+     "x": 120,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "농업회사법인(주)솔송주",
+   "desc": "경남 함양 하동 정씨 가양주를 모태로 전통주 제조",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_a9dLXnNF_9413574f9b5364d22dd83a9b38f4fa9ef415eecb_600x600.png",
+   "officialName": "농업회사법인㈜솔송주",
+   "category": "전통주·막걸리",
+   "short": "솔송주"
+  },
+  {
+   "booth": "B18",
+   "rects": [
+    {
+     "x": 158,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "화태바다야수산 영어조합법인 '나는문어'",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "나는문어"
+  },
+  {
+   "booth": "B19",
+   "rects": [
+    {
+     "x": 120,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "하시엔다 데 테파 데킬라",
+   "desc": "멕시코의 Jalisco 고산지대에서 엄선된 100% 블루 아가베로 만드는 프리미엄 데킬라",
+   "url": "www.ynkinc.net",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_Oph5RZlc_2ec4c38a270f7b420e2f4b0d7e1ce6110d2a93f9_600x600.png",
+   "officialName": "하시엔다 데 테파 데킬라",
+   "category": "진·보드카·럼",
+   "short": "하시엔다"
+  },
+  {
+   "booth": "B20",
+   "rects": [
+    {
+     "x": 158,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "오고가 유자로",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "유자로"
+  },
+  {
+   "booth": "B21",
+   "rects": [
+    {
+     "x": 120,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "꼬치페스타",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "꼬치페스타"
+  },
+  {
+   "booth": "B22",
+   "rects": [
+    {
+     "x": 158,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "허거스 x 숏타임푸드빠",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "허거스"
+  },
+  {
+   "booth": "B23",
+   "rects": [
+    {
+     "x": 120,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "뱅꼬레 와이너리",
+   "desc": "Since 1982. 와인제조 40년 경력의 아버지와 가족이 운영하는 패밀리 와이너리",
+   "url": "www.vincoreewinery.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_jySrJb5h_87759f1080f84d18124dce3525914c0e6151f0e8_600x600.png",
+   "officialName": "한국와인 (뱅꼬레 와이너리)",
+   "category": "와인",
+   "short": "뱅꼬레와인"
+  },
+  {
+   "booth": "B24",
+   "rects": [
+    {
+     "x": 158,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "치즈, 육포, 한라산 흑돼지 고사리 소시지",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "치즈·육포"
+  },
+  {
+   "booth": "B25",
+   "rects": [
+    {
+     "x": 120,
+     "y": 558,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "리몬체 / 버스커 위스키 / 딥에디 보드카",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "리몬체"
+  },
+  {
+   "booth": "B27",
+   "rects": [
+    {
+     "x": 120,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "글뤼바인 / 뱅쇼",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "글뤼바인"
+  },
+  {
+   "booth": "B28",
+   "rects": [
+    {
+     "x": 158,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "고릴라브루잉 GORILLA BREWING",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "맥주",
+   "short": "고릴라브루잉"
+  },
+  {
+   "booth": "B29",
+   "rects": [
+    {
+     "x": 120,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "앱솔루트",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "앱솔루트"
+  },
+  {
+   "booth": "B30",
+   "rects": [
+    {
+     "x": 158,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "제임슨",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "위스키",
+   "short": "제임슨"
+  },
+  {
+   "booth": "B31",
+   "rects": [
+    {
+     "x": 120,
+     "y": 401,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "더 글렌리벳",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "위스키",
+   "short": "글렌리벳"
+  },
+  {
+   "booth": "B32",
+   "rects": [
+    {
+     "x": 158,
+     "y": 401,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "페리에주에",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "페리에주에"
+  },
+  {
+   "booth": "B33",
+   "rects": [
+    {
+     "x": 120,
+     "y": 363,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "로얄살루트",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "위스키",
+   "short": "로얄살루트"
+  },
+  {
+   "booth": "B34",
+   "rects": [
+    {
+     "x": 158,
+     "y": 363,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "발렌타인",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "위스키",
+   "short": "발렌타인"
+  },
+  {
+   "booth": "C01",
+   "rects": [
+    {
+     "x": 235,
+     "y": 1246,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "공사사양조/씨프라이",
+   "desc": "자체 개발한 조청 발효 기술로 전통주이자 지역특산주인 증류주 '삭'을 만들고 있습니다.",
+   "url": "https://044yangjo.com/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_QU85vnPw_5a36dc1a5bbed205fab82cf97cb169ddc748d8a4_600x600.png",
+   "officialName": "농업회사법인 ㈜ 공사사양조",
+   "category": "전통주·막걸리",
+   "short": "공사사양조"
+  },
+  {
+   "booth": "C02",
+   "rects": [
+    {
+     "x": 273,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "프리미엄 남아공 수제 육포",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "남아공육포"
+  },
+  {
+   "booth": "C03",
+   "rects": [
+    {
+     "x": 235,
+     "y": 1208,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "오크홀릭 41도 (미소)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "오크홀릭"
+  },
+  {
+   "booth": "C04",
+   "rects": [
+    {
+     "x": 273,
+     "y": 1208,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "와인코리아",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "와인코리아"
+  },
+  {
+   "booth": "C05",
+   "rects": [
+    {
+     "x": 235,
+     "y": 902,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "일로사케",
+   "desc": "일본 전국의 자자케, 본격소주, 아와모리, 일본산 와인을 수입하는 와슈 전문 수입사입니다.",
+   "url": "http://www.japansake.kr/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_OYolG7jN_5eee3f5b2dbad57f9a3544feb62f711cab91a9e5_600x600.png",
+   "officialName": "일로사케",
+   "category": "사케·니혼슈",
+   "short": "일로사케"
+  },
+  {
+   "booth": "C07",
+   "rects": [
+    {
+     "x": 235,
+     "y": 864,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "아일랜드와인 Island Wine",
+   "desc": "가격대비 만족도 높은 와인을 세계 각지에서 75종 정도 수입합니다",
+   "url": "www.canvasjeju.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_GNjS28Jn_1df3efd3a500af89e51c5b4b017e21a591ee7264_600x600.png",
+   "officialName": "아일랜드와인",
+   "category": "와인",
+   "short": "아일랜드와인"
+  },
+  {
+   "booth": "C08",
+   "rects": [
+    {
+     "x": 273,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "장희도가(주)",
+   "desc": "2019년 대한민국 우리술품평회 대통령상을 수상한 세종대왕어주 탁주 및 약주를 생산",
+   "url": "www.장희도가. com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_QizHM1sR_9010c3545ef8de1f9d9c32c4fa6c2e4b7b50443c_600x600.png",
+   "officialName": "장희도가(주)",
+   "category": "전통주·막걸리",
+   "short": "장희도가"
+  },
+  {
+   "booth": "C09",
+   "rects": [
+    {
+     "x": 235,
+     "y": 788,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "전통주명가 가야양조장",
+   "desc": "국내산(김해산)원재료로 빚는 전통 수제 막걸리. 증류주\r\n첨가물.감미료 없는 건강한 우리술",
+   "url": "www.gayabrewery.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_31UKpwJQ_f8c4e4812fb0caf201e53a934d3d91abe54eb3ce_600x600.png",
+   "officialName": "농업회사법인㈜가야양조장",
+   "category": "전통주·막걸리",
+   "short": "가야양조장"
+  },
+  {
+   "booth": "C10",
+   "rects": [
+    {
+     "x": 273,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "부산낙동양조",
+   "desc": "부산의 숨겨진 매력적인 이야기를 발굴하여 전통주로 세상에 알리는 청년 양조장 부산낙동양조",
+   "url": "https://www.instagram.com/nakdong_yangjo/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_caCh4819_e26eb129d1a54ad4efce08974c1aacccdaa5ec31_600x600.png",
+   "officialName": "부산낙동양조",
+   "category": "전통주·막걸리",
+   "short": "부산낙동양조"
+  },
+  {
+   "booth": "C11",
+   "rects": [
+    {
+     "x": 235,
+     "y": 750,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "기운 한 모금, 홍삼영주",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "홍삼영주"
+  },
+  {
+   "booth": "C12",
+   "rects": [
+    {
+     "x": 273,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "미르아토와인(금용농산)",
+   "desc": "미르아토 와인의 스테디셀러 '샤인머스캣 스파클링 와인",
+   "url": "https://smartstore.naver.com/miratto",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_hLe8Xjwt_3ff2fe843a46905a49db702523536418397836d4_600x600.png",
+   "officialName": "미르아토",
+   "category": "와인",
+   "short": "미르아토와인"
+  },
+  {
+   "booth": "C13",
+   "rects": [
+    {
+     "x": 235,
+     "y": 439,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "라인도이치 브루어리 Reindeutsch Brewery",
+   "desc": "통영을 대표하는 수제맥주 양조장",
+   "url": "www.reindeutsch.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_dFYInkiu_9b65f4e3fbd7cb2ee89478bf634cc2536a313cf5_600x600.png",
+   "officialName": "주식회사 라인도이치",
+   "category": "맥주",
+   "short": "라인도이치"
+  },
+  {
+   "booth": "C14",
+   "rects": [
+    {
+     "x": 273,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "코에도브루어리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "맥주",
+   "short": "코에도맥주"
+  },
+  {
+   "booth": "C15",
+   "rects": [
+    {
+     "x": 235,
+     "y": 401,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "브리즈앤스트림",
+   "desc": "강원도 로컬 농산물을 활용해 세상에 없던 술을 만듭니다",
+   "url": "breezenstream.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_dDTfWslS_c2d355449f3249ca6ff1903d922c51406e5dd19c_600x600.png",
+   "officialName": "브리즈앤스트림 유한회사 농업회사법인",
+   "category": "전통주·막걸리",
+   "short": "브리즈스트림"
+  },
+  {
+   "booth": "C16",
+   "rects": [
+    {
+     "x": 273,
+     "y": 401,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "알코올플레져",
+   "desc": "술을 주제로 '마시고 싶은 책'을 만들고 있는 출판사입니다.",
+   "url": "https://alcoholpleasure.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnFeDipM7k4FIrhkYAH2cTb46kan5OM9jJ2M37f45tn4gceGBCLUb4gQiRttM_aem_gW7-as3LZJKlHR_XqdXFkg",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_TXcj4Rlz_0b4a81b2da298c5e0c90f8c3b58de24dd9e541af_600x600.png",
+   "officialName": "알코올 플레져",
+   "category": "기타",
+   "short": "알코올플레져"
+  },
+  {
+   "booth": "C17",
+   "rects": [
+    {
+     "x": 254,
+     "y": 286,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "카페델루나",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "카페델루나"
+  },
+  {
+   "booth": "D01",
+   "rects": [
+    {
+     "x": 349,
+     "y": 1246,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "Masion François Peyrot",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "Peyrot"
+  },
+  {
+   "booth": "D03",
+   "rects": [
+    {
+     "x": 349,
+     "y": 1208,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "Torabhaig Distillery",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "위스키",
+   "short": "Torabhaig"
+  },
+  {
+   "booth": "D05",
+   "rects": [
+    {
+     "x": 349,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "농업회사법인(유)딸부잣집김부각",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "딸부잣집부각"
+  },
+  {
+   "booth": "D06",
+   "rects": [
+    {
+     "x": 389,
+     "y": 904,
+     "w": 35,
+     "h": 35
+    }
+   ],
+   "name": "수도산와이너리",
+   "desc": "기후 조건에따라 매년 새로운 빈티지 산머루와인 크라테를 만듭니다.",
+   "url": "www.sdsmeru.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_4yeflBdX_2aef5e365105b395c832bf25fc7bbee5559bf0c5_600x600.png",
+   "officialName": "수도산 와이너리",
+   "category": "와인",
+   "short": "수도산와인"
+  },
+  {
+   "booth": "D07",
+   "rects": [
+    {
+     "x": 349,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "대한민국 영천와인 조흔와이너리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "조흔와이너리"
+  },
+  {
+   "booth": "D08",
+   "rects": [
+    {
+     "x": 388,
+     "y": 864,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "영농조합법인 밀향",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "밀향"
+  },
+  {
+   "booth": "D09",
+   "rects": [
+    {
+     "x": 349,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "달과031(과실증류주)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "달과031"
+  },
+  {
+   "booth": "D10",
+   "rects": [
+    {
+     "x": 388,
+     "y": 788,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "한가한주 X 진다이브",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "한가한주"
+  },
+  {
+   "booth": "D11",
+   "rects": [
+    {
+     "x": 349,
+     "y": 750,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "조지아와인 Georgeous Wine",
+   "desc": "내추럴 하고 오가닉하게 만들어진 화려한 풍미의 조지아 와인.",
+   "url": "https://www.instagram.com/georgeous.wine/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_V3Fs1tAR_b35afecec40ca4c4b1cc46219ca2e4280dd3de06_600x600.png",
+   "officialName": "조지아와인",
+   "category": "와인",
+   "short": "조지아와인"
+  },
+  {
+   "booth": "D12",
+   "rects": [
+    {
+     "x": 389,
+     "y": 751,
+     "w": 35,
+     "h": 36
+    }
+   ],
+   "name": "더 더치 치즈앤모어",
+   "desc": "네덜란드 프리미엄 치즈 브랜드 더 더치 치즈앤모어 입니다.",
+   "url": "thedutch.kr",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-5ae213cf6e32c16f2ba54aa3589e2e50_erFU2woK_76272494312db0b38a29566731a4295a7fe63c63_600x600.jpg",
+   "officialName": "더 더치 치즈앤모어",
+   "category": "안주·푸드",
+   "short": "더치치즈"
+  },
+  {
+   "booth": "D13",
+   "rects": [
+    {
+     "x": 349,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "아트몬스터 브루어리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "맥주",
+   "short": "아트몬스터"
+  },
+  {
+   "booth": "D14",
+   "rects": [
+    {
+     "x": 388,
+     "y": 439,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "댄싱사이더",
+   "desc": "로컬 사과에 크래프트 감성을 더하다. 한국 크래프트 사이더의 새로운 기준, 댄싱사이더.",
+   "url": "www.dancingcider.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_WxrJdXcM_0273f895d8fc5409c051787a6bee857ce59fd3b3_600x600.png",
+   "officialName": "댄싱사이더",
+   "category": "사이더·미드",
+   "short": "댄싱사이더"
+  },
+  {
+   "booth": "E01",
+   "rects": [
+    {
+     "x": 464,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "부자진, 한국 GIN의 시작",
+   "desc": "“아버지의 허브와 아들의 기술이 만나다 – 자연을 담은 부자진.”",
+   "url": "bujagin.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_ihgSUBOs_c1fa652c5d932b58513f4aaac52d791eaaa221a8_600x600.png",
+   "officialName": "㈜부자진농업회사법인",
+   "category": "진·보드카·럼",
+   "short": "부자진"
+  },
+  {
+   "booth": "E02",
+   "rects": [
+    {
+     "x": 502,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "내외디스틸러리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "내외증류소"
+  },
+  {
+   "booth": "E03",
+   "rects": [
+    {
+     "x": 464,
+     "y": 1208,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "스페이스컴퍼니코리아",
+   "desc": "꼬냑을 필두로 빼어난 브랜디들과 일본 및 독립 병입 위스키, 럼을 수입하는 주류 수입사",
+   "url": "https://www.instagram.com/spacecompany_korea?igsh=Y2JtbmxoM2NyeDU1",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_JKAOLPgu_344d317f4ec7e36232dfcf1721ea9a696f131310_600x600.png",
+   "officialName": "스페이스컴퍼니코리아",
+   "category": "주류수입·유통",
+   "short": "스페이스"
+  },
+  {
+   "booth": "E05",
+   "rects": [
+    {
+     "x": 464,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "빅보이리커",
+   "desc": "사케소믈리에 직원들로 구성된 최상위 사케만을 판매합니다.",
+   "url": "https://www.instagram.com/bigboyliquor/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_CUz5NIwG_a1135fb5f5708e194e8ef537529844726a4ec2b1_600x600.png",
+   "officialName": "빅보이리커",
+   "category": "사케·니혼슈",
+   "short": "빅보이리커"
+  },
+  {
+   "booth": "E06",
+   "rects": [
+    {
+     "x": 502,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "약사샘 양조장",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "약사샘양조장"
+  },
+  {
+   "booth": "E07",
+   "rects": [
+    {
+     "x": 464,
+     "y": 1094,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "비즈앤치어스",
+   "desc": "독일에서 온 신개념 파티술. 달달하고 새콤한 리큐르입니다",
+   "url": "www.kleinerfeigling.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_tBn3oIw5_1e36f74401f8f46a075923afe78c59453a6e23eb_600x600.png",
+   "officialName": "비즈앤치어스",
+   "category": "진·보드카·럼",
+   "short": "비즈앤치어스"
+  },
+  {
+   "booth": "E08",
+   "rects": [
+    {
+     "x": 502,
+     "y": 1093,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "주식회사 바인브로",
+   "desc": "수입주류 및 주류 악세서리 글라스 전문 도매업",
+   "url": "www.vinebro.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_7E309aZr_c49b6190c8bb00551d9bf6ed86b3a8b2168a7adc_600x600.png",
+   "officialName": "㈜바인브로",
+   "category": "주류수입·유통",
+   "short": "바인브로"
+  },
+  {
+   "booth": "E09",
+   "rects": [
+    {
+     "x": 464,
+     "y": 1017,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "소정우리술",
+   "desc": "20년 가양주 전통 레시피에서 시작된 로컬 전통주 브랜드",
+   "url": "https://smartstore.naver.com/sjwrs",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_KDm1uih8_72251a885e429a889a99e3330325c74ada75725c_600x600.png",
+   "officialName": "소정우리술",
+   "category": "전통주·막걸리",
+   "short": "소정우리술"
+  },
+  {
+   "booth": "E10",
+   "rects": [
+    {
+     "x": 502,
+     "y": 1017,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "미라실 울프 와인 Mirasil Wolf Wine",
+   "desc": "대자연이 녹아든 최고의 순간을 위한 와인",
+   "url": "www.mirasilwolf.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_FljkyPdX_92e870986dc96d1f87ed6b1dc62dfa91058f801b_600x600.png",
+   "officialName": "농업회사법인㈜미라실",
+   "category": "와인",
+   "short": "미라실울프"
+  },
+  {
+   "booth": "E11",
+   "rects": [
+    {
+     "x": 464,
+     "y": 979,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "계절스푼",
+   "desc": "계절스푼은 올리브 전문 브랜드로, 올리브피클, 올리브무침 등을 판매하고 있습니다.",
+   "url": "https://smartstore.naver.com/ss_spoon",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_grPqnAf0_21e78cbba2c878429e6ef8322b79f900b091aa67_600x600.png",
+   "officialName": "계절스푼",
+   "category": "안주·푸드",
+   "short": "계절스푼"
+  },
+  {
+   "booth": "E12",
+   "rects": [
+    {
+     "x": 502,
+     "y": 979,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "락더룰스 크림 데킬라",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "락더룰스"
+  },
+  {
+   "booth": "E13",
+   "rects": [
+    {
+     "x": 464,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "주식회사 피엔에스와인컴퍼니 피안카넬리",
+   "desc": "아직 한국에 소개되지 않은 보석같은 이탈리아 프리미엄 가성비 와인 수입사",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_b09ylaIB_0a7bdd0bdb4dfe1f1581505c405bcf93aada35bf_600x600.png",
+   "officialName": "(주) 피엔에스와인컴퍼니",
+   "category": "와인",
+   "short": "피안카넬리"
+  },
+  {
+   "booth": "E14",
+   "rects": [
+    {
+     "x": 502,
+     "y": 903,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "생키스힐/헤이먼스진",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "생키스힐"
+  },
+  {
+   "booth": "E15",
+   "rects": [
+    {
+     "x": 464,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "비눔 인터내셔널 Vinum International",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "비눔"
+  },
+  {
+   "booth": "E16",
+   "rects": [
+    {
+     "x": 502,
+     "y": 864,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "MASIJU",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "MASIJU"
+  },
+  {
+   "booth": "E17",
+   "rects": [
+    {
+     "x": 464,
+     "y": 788,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "아산증류소",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "아산증류소"
+  },
+  {
+   "booth": "E19",
+   "rects": [
+    {
+     "x": 464,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "와인브라더스 / 젬마디루나",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "와인브라더스"
+  },
+  {
+   "booth": "E20",
+   "rects": [
+    {
+     "x": 502,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "민주술도가(주)",
+   "desc": "추앙, 꽃은 피고\r\n꽃술청\r\n꽃술백\r\n콘체르토 1번\r\n콘체르토 2번\r\n독립군막걸리 블랙\r\n민주쌀",
+   "url": "https://민주술도가.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_hY6aUoHp_5f44613897b9ad74be4eae369eadb5e9ce3e9391_600x600.png",
+   "officialName": "농업회사법인 민주술도가 ㈜",
+   "category": "전통주·막걸리",
+   "short": "민주술도가"
+  },
+  {
+   "booth": "E21",
+   "rects": [
+    {
+     "x": 464,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "대구전통주",
+   "desc": "대구 유일 전통주 제조업체\r\n직접 재배한 농산물 사용\r\n국내 죄고 도수인 밀72 생산",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_LNIY2Wkz_2fb152b588bbfe683a8dea41ae1f6b9417eccf5e_600x600.png",
+   "officialName": "농업회사법인 ㈜대구전통주",
+   "category": "전통주·막걸리",
+   "short": "대구전통주"
+  },
+  {
+   "booth": "E22",
+   "rects": [
+    {
+     "x": 502,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "AM/PM WorldWine",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "AM/PM"
+  },
+  {
+   "booth": "E23",
+   "rects": [
+    {
+     "x": 464,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "더테이블브루잉 비어펍(BeerPhobe)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "맥주",
+   "short": "테이블브루잉"
+  },
+  {
+   "booth": "E24",
+   "rects": [
+    {
+     "x": 502,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "We와이너리",
+   "desc": "한국 최고의 떼르와에서 자란 유럽식과 한국식 농법을 겸한 최고의 포도로 와인을 탄생시킴",
+   "url": "www.wewinery.co.kr",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_aJv6dIVz_6fb9deb0bc195532d80109fbab35aae97fb32f7a_600x600.png",
+   "officialName": "위(We) 와이너리",
+   "category": "와인",
+   "short": "We와이너리"
+  },
+  {
+   "booth": "E25",
+   "rects": [
+    {
+     "x": 464,
+     "y": 559,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "Andy's",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "Andy's"
+  },
+  {
+   "booth": "E26",
+   "rects": [
+    {
+     "x": 502,
+     "y": 559,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "아이비허니 허니와인 (MEAD)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "사이더·미드",
+   "short": "아이비허니"
+  },
+  {
+   "booth": "E27",
+   "rects": [
+    {
+     "x": 464,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "(주)마이비어",
+   "desc": "코나브루잉 / 샤또줄리엣 / 탄두아이 / 몬테 라 레이나 등 주류 수입사",
+   "url": "https://mybeer.co.kr/aboutcompany",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_rYwgf98D_6a4b774bc062df6076a9aa896f3c254b9dc1d169_600x600.png",
+   "officialName": "㈜마이비어",
+   "category": "주류수입·유통",
+   "short": "마이비어"
+  },
+  {
+   "booth": "E28",
+   "rects": [
+    {
+     "x": 502,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "운주도가",
+   "desc": "'오양주'를 기본으로한 탁주 '윤탁'\r\n'윤슬' 약주 ' 운주'가 있습니다.",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_wB6GQlmh_a149c19625973b8b397a0663753e0f0fed9db039_600x600.png",
+   "officialName": "운주도가",
+   "category": "전통주·막걸리",
+   "short": "운주도가"
+  },
+  {
+   "booth": "E29",
+   "rects": [
+    {
+     "x": 464,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "한입두엇",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "한입두엇"
+  },
+  {
+   "booth": "E30",
+   "rects": [
+    {
+     "x": 502,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "태인정도가/건강한사람들협동조합",
+   "desc": "부산대저 지역의 특산물인 대저짭짤이토마토로 만든 토마토막걸리",
+   "url": "smartstore.naver.com/dandi.920",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_RSefXlWm_6f9ec72cf1868e343b5a14a81e3f43d52ba6d985_600x600.png",
+   "officialName": "건강한사람들협동조합",
+   "category": "전통주·막걸리",
+   "short": "태인정도가"
+  },
+  {
+   "booth": "F01",
+   "rects": [
+    {
+     "x": 579,
+     "y": 1246,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "농업회사법인(주)술샘",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "술샘"
+  },
+  {
+   "booth": "F02",
+   "rects": [
+    {
+     "x": 617,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "아이엠더문 얼려마시는 상큼달달 과일 리큐르",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "아이엠더문"
+  },
+  {
+   "booth": "F03",
+   "rects": [
+    {
+     "x": 579,
+     "y": 1208,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "유월제주 황금향 뱅쇼",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "유월제주"
+  },
+  {
+   "booth": "F04",
+   "rects": [
+    {
+     "x": 617,
+     "y": 1208,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "알케미스트",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "알케미스트"
+  },
+  {
+   "booth": "F05",
+   "rects": [
+    {
+     "x": 579,
+     "y": 1132,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "ZERO 곰취 미세차",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "곰취미세차"
+  },
+  {
+   "booth": "F06",
+   "rects": [
+    {
+     "x": 617,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "함안 빛올 양조장",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "빛올양조장"
+  },
+  {
+   "booth": "F07",
+   "rects": [
+    {
+     "x": 579,
+     "y": 1094,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "고도리 와이너리",
+   "desc": "저희 와인은 대한민국 여성들이 사랑하는 와인입니다",
+   "url": "WWW.고도리와인.com",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_EyHJFKOh_5a475cd300e3f193dc92589cf96125700ebff558_600x600.png",
+   "officialName": "고도리 와이너리",
+   "category": "와인",
+   "short": "고도리와인"
+  },
+  {
+   "booth": "F08",
+   "rects": [
+    {
+     "x": 617,
+     "y": 1094,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "율 와이너리 Yul Winery",
+   "desc": "색·향·맛의 균형을 추구하는 프리미엄 수제 와이너리",
+   "url": "https://smartstore.naver.com/yul_winery",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_u5HyDdzN_eea2f47da7399a3b493c7b431f20fff49f377f2a_600x600.png",
+   "officialName": "율 와이너리",
+   "category": "와인",
+   "short": "율와이너리"
+  },
+  {
+   "booth": "F09",
+   "rects": [
+    {
+     "x": 579,
+     "y": 1017,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "영천시 대향와이너리",
+   "desc": "과실 그대로의 신선한 아로마가 풍성하게 피어나는 와인을 빚습니다.",
+   "url": "https://smartstore.naver.com/daehyang",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_51lThGmA_900d44a63bb4d8d1734de752f29bd01e56839639_600x600.png",
+   "officialName": "대향와이너리",
+   "category": "와인",
+   "short": "대향와이너리"
+  },
+  {
+   "booth": "F10",
+   "rects": [
+    {
+     "x": 617,
+     "y": 1017,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "소계리와인 SokyeriWine",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "소계리와인"
+  },
+  {
+   "booth": "F11",
+   "rects": [
+    {
+     "x": 579,
+     "y": 979,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "부포컴퍼니",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "부포컴퍼니"
+  },
+  {
+   "booth": "F12",
+   "rects": [
+    {
+     "x": 617,
+     "y": 979,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "21,900시간의 오랜 기다림, 까치돌배주",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "까치돌배주"
+  },
+  {
+   "booth": "F13",
+   "rects": [
+    {
+     "x": 579,
+     "y": 864,
+     "w": 75,
+     "h": 75
+    }
+   ],
+   "name": "화요",
+   "desc": "100% 국내산쌀을 원료로 옹기에서 숙성한 원액에 오크숙성 원액을 블렌딩한 프리미엄 증류주",
+   "url": "https://hwayo.com/home/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_tRqNXLYm_109a6d24d137a4a651a1db163186a7a6e5a455e4_600x600.png",
+   "officialName": "화요",
+   "category": "전통주·막걸리",
+   "short": "화요"
+  },
+  {
+   "booth": "F17",
+   "rects": [
+    {
+     "x": 579,
+     "y": 788,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "제이디아이 - 젤소모라 모스카토 다스티",
+   "desc": "젤소모라 모스카토 다스티를 수입하는 회사입니다",
+   "url": "https://www.instagram.com/jdi_wine",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_3brEcMmU_352e865b4dd9863b7a6b1b65a201cc5a11184b6c_600x600.png",
+   "officialName": "제이디아이",
+   "category": "와인",
+   "short": "젤소모라"
+  },
+  {
+   "booth": "F18",
+   "rects": [
+    {
+     "x": 617,
+     "y": 788,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "(주)엘케이코리아",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "엘케이코리아"
+  },
+  {
+   "booth": "F19",
+   "rects": [
+    {
+     "x": 579,
+     "y": 750,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "함양천령산약초",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "천령산약초"
+  },
+  {
+   "booth": "F20",
+   "rects": [
+    {
+     "x": 617,
+     "y": 750,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "꼬마루수제육포",
+   "desc": "음식이 아닌 브랜드를 만듭니다. 품질과 맛에서 으뜸가는 꼬마루 수제육포, 수제육전입니다.",
+   "url": "https://kkomaroo2.shop.blogpay.co.kr/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_dyvi0eBH_ace92e051e8378cda237da13eca402da6284727f_600x600.png",
+   "officialName": "꼬마루",
+   "category": "안주·푸드",
+   "short": "꼬마루육포"
+  },
+  {
+   "booth": "F21",
+   "rects": [
+    {
+     "x": 579,
+     "y": 673,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "브루어리쏨",
+   "desc": "쌀, 누룩, 물, 자연 그대로 손으로 빚는 전통주 양조장 브루어리 쏨",
+   "url": "www.instagram.com/breweryssom",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_lckaSW4i_56f45af4c73b587d4457e285fd2b992cd214a0f5_600x600.png",
+   "officialName": "브루어리쏨",
+   "category": "전통주·막걸리",
+   "short": "브루어리쏨"
+  },
+  {
+   "booth": "F22",
+   "rects": [
+    {
+     "x": 617,
+     "y": 673,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "(주)네모산주류",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "네모산주류"
+  },
+  {
+   "booth": "F23",
+   "rects": [
+    {
+     "x": 579,
+     "y": 635,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "올빈와인",
+   "desc": "\"VALUE OF FAME\"\r\n올빈와인은 유럽와인 유통 전문기업이자 와인문화의 전도사입니다",
+   "url": "allvintage.co.kr",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_bMW4lSZG_febf50eeb76785d08e9848be360e0badfa4f9787_600x600.png",
+   "officialName": "㈜올빈와인",
+   "category": "와인",
+   "short": "올빈와인"
+  },
+  {
+   "booth": "F24",
+   "rects": [
+    {
+     "x": 617,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "주식회사 더원인터내셔널",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "주류수입·유통",
+   "short": "더원"
+  },
+  {
+   "booth": "F25",
+   "rects": [
+    {
+     "x": 579,
+     "y": 559,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "슬러시연구소 Slushylab",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "슬러시연구소"
+  },
+  {
+   "booth": "F26",
+   "rects": [
+    {
+     "x": 617,
+     "y": 559,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "설로인",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "설로인"
+  },
+  {
+   "booth": "F27",
+   "rects": [
+    {
+     "x": 579,
+     "y": 520,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "명주도가",
+   "desc": "양조사 엄마와 청년농부 딸이 취향을 빚는 양조장, 명주도가입니다.",
+   "url": "https://smartstore.naver.com/myeongju-doga",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_ZiCYjMJk_0f7b4c3d2b127943a6f58ad9c005690be6d5b7fd_600x600.png",
+   "officialName": "농업회사법인 명주도가 주식회사",
+   "category": "전통주·막걸리",
+   "short": "명주도가"
+  },
+  {
+   "booth": "F28",
+   "rects": [
+    {
+     "x": 617,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "낫개",
+   "desc": "부산 다대포에서 오뎅을 주제로 여러 음식과 주류를 소개하는 공간입니다.",
+   "url": "https://www.instagram.com/duggeobi_ddp",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_vOSTHqdn_a21ac7c2c2fa4076e18c1701242e0ee90b8af9f1_600x600.png",
+   "officialName": "두꺼비오뎅 낫개점",
+   "category": "안주·푸드",
+   "short": "낫개"
+  },
+  {
+   "booth": "F29",
+   "rects": [
+    {
+     "x": 579,
+     "y": 439,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "지리산 더덕주",
+   "desc": "경남 함양 지리산 자락에서\r\n온 가족이 정성스레 키운 더덕으로 만들었습니다",
+   "url": "https://smartstore.naver.com/ungyeong?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnyDb4CbaNFngO6MS3bStOwh9cYPb7xk12GYk9ZTqOhdj7METod-gxXrR7TR4_aem_f0qciThC5MGRVWH-Y392IA",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_eSBqOHQv_1507182fbc1bb9d8851d475e7d66b80bfba6b37d_600x600.png",
+   "officialName": "지리산더덕주(운경)",
+   "category": "전통주·막걸리",
+   "short": "지리산더덕주"
+  },
+  {
+   "booth": "F30",
+   "rects": [
+    {
+     "x": 617,
+     "y": 439,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "(주)빅샷임포츠",
+   "desc": "전세계 맛있는 술을 한국으로~ \"많이\"가 아닌 \"맛 있는\" 술을 수입합니다.",
+   "url": "https://www.bigshotimports.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn6ctsApDgEy0C7ySvWzFBNkRTl9M2skmnhHeAzbTg5MyFei_iZmyAjwM1Yyg_aem_a8jGXDyZomaH1hqU61rKCQ",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_EQ8ghLIc_4903ea4a77954d1db096a35b33cebc476ce0f397_600x600.png",
+   "officialName": "주식회사 빅샷임포츠",
+   "category": "주류수입·유통",
+   "short": "빅샷임포츠"
+  },
+  {
+   "booth": "F31",
+   "rects": [
+    {
+     "x": 579,
+     "y": 401,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "마루원",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "마루원"
+  },
+  {
+   "booth": "F32",
+   "rects": [
+    {
+     "x": 617,
+     "y": 401,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "다랭이팜 양조장, 유자청",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "다랭이팜"
+  },
+  {
+   "booth": "G01",
+   "rects": [
+    {
+     "x": 693,
+     "y": 1285,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "WS",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "WS"
+  },
+  {
+   "booth": "G02",
+   "rects": [
+    {
+     "x": 732,
+     "y": 1285,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "산과보물(햇볕에 갈아만든 빈투바수제초콜릿)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "산과보물"
+  },
+  {
+   "booth": "G03",
+   "rects": [
+    {
+     "x": 693,
+     "y": 1247,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "옥수주조",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "옥수주조"
+  },
+  {
+   "booth": "G04",
+   "rects": [
+    {
+     "x": 732,
+     "y": 1247,
+     "w": 36,
+     "h": 36
+    }
+   ],
+   "name": "리트 lit.",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "리트"
+  },
+  {
+   "booth": "G05",
+   "rects": [
+    {
+     "x": 693,
+     "y": 1170,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "프리미엄미트그로서리 '술탕'",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "술탕"
+  },
+  {
+   "booth": "G06",
+   "rects": [
+    {
+     "x": 732,
+     "y": 1170,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "코닝 크리머리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "코닝크리머리"
+  },
+  {
+   "booth": "G07",
+   "rects": [
+    {
+     "x": 693,
+     "y": 1132,
+     "w": 75,
+     "h": 36
+    }
+   ],
+   "name": "참치학교",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "참치학교"
+  },
+  {
+   "booth": "G09",
+   "rects": [
+    {
+     "x": 693,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "㈜와이브라더스컴퍼니",
+   "desc": "소비자의 취향에 맞는 대중적인 와인을 합리적인 가격에 공급하고자 노력합니다",
+   "url": "https://www.instagram.com/y.brothers.wineisgood/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_h8QBO5pE_96b0ce95f3a576c3d1eb6b1dbc51022fd80033bb_600x600.png",
+   "officialName": "주식회사 와이브라더스컴퍼니",
+   "category": "와인",
+   "short": "와이브라더스"
+  },
+  {
+   "booth": "G10",
+   "rects": [
+    {
+     "x": 732,
+     "y": 597,
+     "w": 36,
+     "h": 75
+    }
+   ],
+   "name": "치즈 닭강정",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "치즈닭강정"
+  },
+  {
+   "booth": "G12",
+   "rects": [
+    {
+     "x": 693,
+     "y": 597,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "봉황 와이너리",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "봉황와이너리"
+  },
+  {
+   "booth": "G13",
+   "rects": [
+    {
+     "x": 693,
+     "y": 520,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "푸드차이 / 막창튀김, 고추튀김, 매운어묵",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "푸드차이"
+  },
+  {
+   "booth": "G14",
+   "rects": [
+    {
+     "x": 732,
+     "y": 520,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "고쥬주조",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "고쥬주조"
+  },
+  {
+   "booth": "G15",
+   "rects": [
+    {
+     "x": 693,
+     "y": 482,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "농업회사법인 주식회사 페어리플레이",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "페어리플레이"
+  },
+  {
+   "booth": "G16",
+   "rects": [
+    {
+     "x": 732,
+     "y": 482,
+     "w": 36,
+     "h": 37
+    }
+   ],
+   "name": "케빈스보일링크랩",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "케빈스크랩"
+  },
+  {
+   "booth": "H01",
+   "rects": [
+    {
+     "x": 808,
+     "y": 1285,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "㈜비너스코리아",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "와인",
+   "short": "비너스코리아"
+  },
+  {
+   "booth": "H02",
+   "rects": [
+    {
+     "x": 846,
+     "y": 1285,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "벗드림양조장",
+   "desc": "부산에서 생산된 쌀을 이용하여 만든 프리미엄 전통주",
+   "url": "https://www.instagram.com/butdream9/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-94be51ca9fa512f5e9e473fb16242315_lXrvyZ1s_a6a1a2b020f8d94eefe598483708ee644a091856_600x600.jpg",
+   "officialName": "벗드림양조장",
+   "category": "전통주·막걸리",
+   "short": "벗드림"
+  },
+  {
+   "booth": "H03",
+   "rects": [
+    {
+     "x": 808,
+     "y": 1246,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "풍정사계",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "전통주·막걸리",
+   "short": "풍정사계"
+  },
+  {
+   "booth": "H04",
+   "rects": [
+    {
+     "x": 846,
+     "y": 1247,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "대경 F&B 농업회사 법인",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "진·보드카·럼",
+   "short": "대경F&B"
+  },
+  {
+   "booth": "H05",
+   "rects": [
+    {
+     "x": 808,
+     "y": 1170,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "쪽갈비후라이드",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "쪽갈비"
+  },
+  {
+   "booth": "H06",
+   "rects": [
+    {
+     "x": 846,
+     "y": 1170,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "메이크제로",
+   "desc": "인위적인 첨가물을 배제하고 제로 웨이스트를 지향하는 칵테일 바",
+   "url": "https://www.instagram.com/makezero.bar/",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_QraHsP0A_6288b043fea5fa73377fe4e7cceb19c52172859f_600x600.png",
+   "officialName": "메이크제로",
+   "category": "진·보드카·럼",
+   "short": "메이크제로"
+  },
+  {
+   "booth": "H07",
+   "rects": [
+    {
+     "x": 808,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "YOB",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "YOB"
+  },
+  {
+   "booth": "H08",
+   "rects": [
+    {
+     "x": 846,
+     "y": 1132,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "㈜그린에딧",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "기타",
+   "short": "그린에딧"
+  },
+  {
+   "booth": "H09",
+   "rects": [
+    {
+     "x": 808,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "고등어연구소",
+   "desc": "세일러스 고등어 연구소입니다.\r\n부산시어인 고등어를 컨셉으로 운영중인 식당입니다.",
+   "url": "https://smartstore.naver.com/sailorsmarket",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_UziBlwGS_89bed7ea4645f35fab32700ca83a5657f4bb1f47_600x600.png",
+   "officialName": "㈜디케이씨에스 (고등어연구소)",
+   "category": "안주·푸드",
+   "short": "고등어연구소"
+  },
+  {
+   "booth": "H10",
+   "rects": [
+    {
+     "x": 846,
+     "y": 635,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "캐주얼 이탈리안 키친 / 마상스",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "마상스"
+  },
+  {
+   "booth": "H11",
+   "rects": [
+    {
+     "x": 808,
+     "y": 597,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "돼지팥빙수",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "논알콜·음료",
+   "short": "돼지팥빙수"
+  },
+  {
+   "booth": "H12",
+   "rects": [
+    {
+     "x": 846,
+     "y": 597,
+     "w": 37,
+     "h": 36
+    }
+   ],
+   "name": "깡통시장 빠삭빠삭",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "빠삭빠삭"
+  },
+  {
+   "booth": "H13",
+   "rects": [
+    {
+     "x": 808,
+     "y": 520,
+     "w": 75,
+     "h": 37
+    }
+   ],
+   "name": "WOORI F&B(골뱅이무침 / 해물부추전)",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "골뱅이무침"
+  },
+  {
+   "booth": "H15",
+   "rects": [
+    {
+     "x": 808,
+     "y": 482,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "지리산묵가",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "지리산묵가"
+  },
+  {
+   "booth": "H16",
+   "rects": [
+    {
+     "x": 846,
+     "y": 482,
+     "w": 37,
+     "h": 37
+    }
+   ],
+   "name": "낭만부부 Nangman Booboo",
+   "desc": "",
+   "url": "",
+   "logo": "",
+   "officialName": "",
+   "category": "안주·푸드",
+   "short": "낭만부부"
+  },
+  {
+   "booth": "I02",
+   "rects": [
+    {
+     "x": 923,
+     "y": 597,
+     "w": 36,
+     "h": 75
+    }
+   ],
+   "name": "오사카야끼",
+   "desc": "오사카 독일마을은 수제튀김을 판매하고 있습니다",
+   "url": "-",
+   "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_02eWQC5o_30d6ff6147ac9291d6c425fb7a6bac671fbc0339_600x600.png",
+   "officialName": "오사카야끼(남해독일마을)",
+   "category": "안주·푸드",
+   "short": "오사카야끼"
+  }
+ ],
+ "facilities": [
+  {
+   "label": "서비스 센터 / 이벤트",
+   "x": 349,
+   "y": 286,
+   "w": 114,
+   "h": 37
+  },
+  {
+   "label": "세척장 A",
+   "x": 464,
+   "y": 286,
+   "w": 75,
+   "h": 37
+  },
+  {
+   "label": "택배접수",
+   "x": 540,
+   "y": 286,
+   "w": 75,
+   "h": 37
+  },
+  {
+   "label": "네컷사진 이벤트",
+   "x": 922,
+   "y": 1132,
+   "w": 37,
+   "h": 75
+  }
+ ]
+}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#023a95">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>부스맵</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="topbar">
+  <div class="row">
+    <h1 id="fairTitle">부스맵</h1>
+    <button id="menuBtn" class="icon-btn" aria-label="메뉴">⋯</button>
+  </div>
+  <div class="row search-row">
+    <input id="search" type="search" placeholder="업체명·부스번호 검색" autocomplete="off" enterkeyhint="search">
+    <button id="clearSearch" class="icon-btn" aria-label="검색 지우기" hidden>✕</button>
+  </div>
+  <div id="chips" class="chips"></div>
+</header>
+
+<main>
+  <section id="mapView" class="view active">
+    <div id="viewport">
+      <div id="canvas">
+        <img id="mapImg" alt="부스 배치도" draggable="false">
+        <div id="overlay"></div>
+        <svg id="route" aria-hidden="true"><line id="routeLine"></line></svg>
+        <div id="hereMarker" hidden>
+          <div class="hm-inner">
+            <span class="pulse"></span><span class="dot"></span><span class="tag">현위치</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mapTools">
+      <button id="goHere" class="icon-btn" aria-label="현위치로 이동" title="현위치" hidden>📍</button>
+      <button id="labelToggle" class="icon-btn" aria-label="업체명 표시 전환" title="업체명 표시">🏷</button>
+      <button id="zoomOut" class="icon-btn" aria-label="축소">−</button>
+      <button id="zoomFit" class="icon-btn" aria-label="전체 보기">⤢</button>
+      <button id="zoomIn" class="icon-btn" aria-label="확대">＋</button>
+    </div>
+    <p id="hint" class="hint"></p>
+  </section>
+
+  <section id="listView" class="view">
+    <div id="listMeta" class="list-meta"></div>
+    <ul id="list"></ul>
+  </section>
+</main>
+
+<nav id="tabs">
+  <button data-view="mapView" class="active">🗺️ 지도</button>
+  <button data-view="listView">📋 목록</button>
+</nav>
+
+<!-- 부스 상세 시트 -->
+<div id="sheetScrim" class="scrim" hidden></div>
+<section id="sheet" class="sheet" hidden aria-label="부스 상세">
+  <div class="sheet-grip"></div>
+  <div class="sheet-head">
+    <span id="sBooth" class="booth-code"></span>
+    <span id="sCat" class="cat-tag"></span>
+    <button id="sheetClose" class="icon-btn" aria-label="닫기">✕</button>
+  </div>
+  <h2 id="sName"></h2>
+  <p id="sDesc" class="desc"></p>
+  <a id="sUrl" class="ext-link" target="_blank" rel="noopener" hidden>업체 링크 열기 ↗</a>
+
+  <div class="field">
+    <label>내 평가</label>
+    <div id="sStars" class="stars" role="group" aria-label="별점"></div>
+  </div>
+
+  <div class="field">
+    <label>상태</label>
+    <div id="sTags" class="tag-row"></div>
+  </div>
+
+  <div class="field">
+    <label for="sMemo">메모</label>
+    <textarea id="sMemo" rows="4" placeholder="시음 소감, 가격, 담당자 이름 등"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="sCatSel">카테고리 수정</label>
+    <select id="sCatSel"></select>
+  </div>
+
+  <p id="sHere" class="here-row" hidden></p>
+  <button id="sHereBtn" class="wide-btn">📍 여기 있음</button>
+  <button id="sLocate" class="wide-btn">지도에서 이 부스 보기</button>
+</section>
+
+<!-- 메뉴 시트 -->
+<div id="menuScrim" class="scrim" hidden></div>
+<section id="menu" class="sheet" hidden aria-label="메뉴">
+  <div class="sheet-grip"></div>
+  <div class="sheet-head"><h2>메뉴</h2><button id="menuClose" class="icon-btn" aria-label="닫기">✕</button></div>
+  <div id="stats" class="stats"></div>
+  <button id="exportBtn" class="wide-btn">내 기록 내보내기 (JSON)</button>
+  <button id="exportMdBtn" class="wide-btn">방문 기록 내보내기 (텍스트)</button>
+  <label class="wide-btn file-btn">기록 불러오기<input id="importFile" type="file" accept="application/json" hidden></label>
+  <button id="editToggle" class="wide-btn">부스 위치 편집 모드</button>
+  <button id="resetBtn" class="wide-btn danger">내 기록 전체 삭제</button>
+  <p class="fine" id="srcNote"></p>
+</section>
+
+<!-- 편집 모드 툴바 -->
+<div id="editBar" hidden>
+  <span id="editInfo">편집 모드</span>
+  <button id="editAdd">＋부스 추가</button>
+  <button id="editDelete">삭제</button>
+  <button id="editExport">좌표 내보내기</button>
+  <button id="editExit">종료</button>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
