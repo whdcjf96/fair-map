@@ -35,11 +35,31 @@ PWA로 만들어져 있어 한 번 열어두면 전시장에서 네트워크가 
 
 ## 배포
 
+배포처: **https://whdcjf96.github.io/fair-map/**
+
 `app/` 폴더가 곧 정적 사이트다. 빌드 과정이 없으므로 통째로 올리면 된다.
+GitHub Pages는 `gh-pages` 브랜치의 루트를 서빙하도록 설정돼 있고, 그 브랜치는
+`app/` 폴더를 subtree로 밀어 만든다.
 
 ```bash
-# GitHub Pages 예시 — app/ 내용을 gh-pages 브랜치나 docs/ 로 올린다
-python3 -m http.server 8765 --directory app   # 로컬 확인
+python3 -m http.server 8765 --directory app       # 로컬 확인
+
+# 배포
+tools/build.sh                                    # 데이터를 바꿨을 때만
+# app/ 안의 파일을 고쳤다면 app/sw.js 의 CACHE 버전을 반드시 올린다
+git add -A && git commit -m "..."
+git push origin main
+git subtree push --prefix app origin gh-pages     # ← 실제 배포는 이 줄
+```
+
+`main`에 푸시하는 것만으로는 사이트가 바뀌지 않는다. 마지막 줄이 배포다.
+
+`.github/workflows/deploy.yml`은 `main` 푸시만으로 배포되는 GitHub Actions 방식인데,
+초기 배포 당시 Actions 장애로 러너가 잡을 가져가지 못해 브랜치 방식으로 전환했다.
+Actions가 안정적이면 Pages 소스를 workflow로 되돌려 그쪽을 쓰면 된다.
+
+```bash
+gh api -X PUT repos/whdcjf96/fair-map/pages -f build_type=workflow
 ```
 
 HTTPS에서 서빙해야 서비스 워커(오프라인)가 동작한다. `localhost`는 예외적으로 HTTP도 된다.
