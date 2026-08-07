@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#023a95">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- iOS 홈 화면 앱은 manifest가 아니라 아래 두 줄을 본다.
+     apple-touch-icon이 없으면 아이콘 자리에 페이지 스크린샷이 들어가고,
+     title은 실행 후 박람회 이름으로 바뀌므로 홈 화면 이름을 따로 못박는다. -->
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-title" content="부스맵">
 <title>부스맵</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="style.css">
