@@ -13,9 +13,11 @@ const CAT_COLOR = {
   '논알콜·음료': '#bfe4f2', '안주·푸드': '#f2b79a', '주류수입·유통': '#d5d0c0', '기타': '#d9dde2',
 };
 const VISITED_COLOR = '#5fca92';
-// 이 배율 아래에서는 글씨가 뭉개져 못 읽으므로 색만 칠하고 이름은 감춘다.
-// 이름표 글자는 이미지 좌표계에서 11px 안팎이라 0.8배면 화면상 9px쯤 된다.
-const LABEL_MIN_SCALE = 0.8;
+// 이름이 길수록 글자가 작아지므로, 이름표마다 읽을 만해지는 배율이 다르다.
+// 화면상 8px는 되어야 읽히므로 필요 배율 = 8 / 글자크기 로 보고 세 단계로 나눈다.
+// 짧은 이름은 축소 상태에서도 뜨고, 긴 이름은 더 확대해야 나타난다.
+const LABEL_TIERS = [0.8, 1.05, 1.4];
+const MIN_READABLE_PX = 8;
 
 let fair = null;              // 박람회 원본 데이터
 let booths = [];              // 화면에 쓰는 부스 배열(사용자 보정 반영)
@@ -84,6 +86,7 @@ async function init() {
   bindUI();
   setLabels(labelsOn);
   renderHere();
+  if (localStorage.getItem('fairmap:noticeSeen') !== '1') showNotice();
 
   if (img.complete) fitToScreen(); else img.onload = fitToScreen;
   window.addEventListener('resize', () => { if (scale <= fitScale * 1.02) fitToScreen(); });
@@ -139,8 +142,10 @@ function renderOverlay() {
       setRect(d, r);
       if (i === main) {
         const lay = layoutLabel(b.short || b.booth, r.w, r.h);
+        const need = MIN_READABLE_PX / lay.size;
+        const tier = LABEL_TIERS.findIndex((t) => need <= t);
         const lbl = document.createElement('span');
-        lbl.className = 'lbl';
+        lbl.className = 'lbl t' + (tier < 0 ? LABEL_TIERS.length : tier + 1);
         lbl.textContent = lay.text;
         lbl.style.fontSize = lay.size + 'px';
         d.appendChild(lbl);
@@ -155,36 +160,61 @@ function renderOverlay() {
 // 한글은 글자폭이 글자크기와 거의 같고, 영숫자는 그 절반쯤이다.
 const charWidth = (c) => (/[가-힣ㄱ-ㆎ]/.test(c) ? 1 : 0.56);
 
-/** 칸 안에 이름을 어떻게 앉힐지 정한다 — 줄 나누기와 글자 크기.
+const textWidth = (s) => [...s].reduce((acc, c) => acc + charWidth(c), 0);
+
+/** 주어진 줄 수로 나누는 가장 보기 좋은 방법을 찾는다.
  *
- * 브라우저 자동 줄바꿈에 맡기면 '로얄살루/트'처럼 한 글자만 떨어져 읽기 나쁘다.
- * 1~3줄로 균등 분할해보고 글자가 가장 커지는 조합을 고른 뒤, 줄바꿈을 직접 넣는다.
+ * 이름이 짧아 모든 분할을 다 따져도 부담이 없다. 세 가지를 함께 본다.
+ *  - 가장 긴 줄이 짧을수록 글자를 크게 쓸 수 있다(제일 중요)
+ *  - 단어 중간보다 공백에서 자르는 게 읽기 좋다
+ *  - 줄 길이가 고를수록 보기 좋다('댕댕이/베이커/리'처럼 한 글자만 남지 않게)
+ */
+function bestSplit(label, lines) {
+  const chars = [...label];
+  const n = chars.length;
+  if (lines === 1) return { rows: [label], widest: textWidth(label) };
+  if (lines > n) return null;
+
+  let best = null;
+  const consider = (cuts) => {
+    const bounds = [0, ...cuts, n];
+    const rows = [];
+    for (let i = 0; i < bounds.length - 1; i++) {
+      rows.push(chars.slice(bounds[i], bounds[i + 1]).join('').trim());
+    }
+    if (rows.some((r) => r === '')) return;
+    const widths = rows.map(textWidth);
+    const widest = Math.max(...widths);
+    const wordBreaks = cuts.filter((i) => chars[i - 1] !== ' ' && chars[i] !== ' ').length;
+    const spread = widest - Math.min(...widths);
+    // 같은 조건이면 긴 줄이 앞에 오는 쪽이 자연스럽다('댕댕이/베이/커리' > '댕댕/이베/이커리').
+    const growing = widths.filter((v, i) => i > 0 && v > widths[i - 1]).length;
+    const score = widest + wordBreaks * 0.2 + spread * 0.35 + growing * 0.08;
+    if (!best || score < best.score) best = { score, widest, rows };
+  };
+  const walk = (start, depth, acc) => {
+    if (depth === 0) return consider(acc);
+    for (let i = start; i <= n - depth; i++) walk(i + 1, depth - 1, [...acc, i]);
+  };
+  walk(1, lines - 1, []);
+  return best;
+}
+
+/** 칸 안에 이름을 어떻게 앉힐지 정한다 — 줄 나누기와 글자 크기.
+ *  브라우저 자동 줄바꿈에 맡기면 '로얄살루/트'처럼 한 글자만 떨어져 읽기 나쁘다.
  */
 function layoutLabel(label, w, h) {
-  const chars = [...label];
-  const total = chars.reduce((s, c) => s + charWidth(c), 0);
   let best = null;
   for (const lines of [1, 2, 3]) {
-    if (lines > chars.length) break;
-    const target = total / lines;
-    const rows = [];
-    let cur = '', curW = 0;
-    for (const c of chars) {
-      if (curW >= target - 1e-9 && rows.length < lines - 1) {
-        rows.push(cur); cur = ''; curW = 0;
-      }
-      cur += c; curW += charWidth(c);
-    }
-    rows.push(cur);
-    if (rows.length !== lines) continue;
-    const widest = Math.max(...rows.map((r) => [...r].reduce((s, c) => s + charWidth(c), 0)));
+    const split = bestSplit(label, lines);
+    if (!split) break;
     // 상한을 먼저 걸어야 한다. 안 그러면 '13px로 잘릴 크기'를 서로 비교하게 되어
     // 실제로는 같은 크기인데도 줄을 더 쪼갠 쪽이 이긴다.
     const size = Math.max(4.5, Math.min(13,
-      Math.min((w - 3) / widest, (h - 3) / (lines * 1.12))));
+      Math.min((w - 3) / split.widest, (h - 3) / (lines * 1.12))));
     // 줄을 늘리면 글자는 커지지만 읽기는 나빠진다('제임/슨'). 확실히 커질 때만 쪼갠다.
     const score = size * [1, 1, 0.82, 0.72][lines];
-    if (!best || score > best.score) best = { score, size, text: rows.join('\n') };
+    if (!best || score > best.score) best = { score, size, text: split.rows.join('\n') };
   }
   best = best || { size: 6, text: label, score: 6 };
   return { text: best.text, size: best.size.toFixed(1) };
@@ -239,8 +269,10 @@ function updateHint() {
     .filter(Boolean).join(' · ');
   if (lastHits !== null) {
     $('hint').textContent = `${cond} — ${lastHits}개 부스`;
-  } else if (labelsOn && scale < LABEL_MIN_SCALE) {
-    $('hint').textContent = '확대하면 업체명이 보입니다';
+  } else if (labelsOn && scale < LABEL_TIERS[LABEL_TIERS.length - 1]) {
+    $('hint').textContent = scale < LABEL_TIERS[0]
+      ? '확대하면 업체명이 보입니다'
+      : '더 확대하면 나머지 업체명도 보입니다';
   } else {
     $('hint').textContent = '';
   }
@@ -330,8 +362,10 @@ let scale = 1, tx = 0, ty = 0, fitScale = 1;
 
 function applyTransform() {
   $('canvas').style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
-  // 너무 축소된 상태에서 이름을 띄우면 글씨가 뭉개지므로 색만 남긴다.
-  document.body.classList.toggle('names', labelsOn && scale >= LABEL_MIN_SCALE);
+  // 배율이 오를수록 더 작은 글씨의 이름표까지 차례로 켠다.
+  LABEL_TIERS.forEach((t, i) => {
+    document.body.classList.toggle('names' + (i + 1), labelsOn && scale >= t);
+  });
   scaleHere();
   updateHint();
 }
@@ -827,6 +861,18 @@ function bindEditor() {
   $('editExit').onclick = () => { setEditing(false); renderOverlay(); refresh(); renderHere(); };
 }
 
+/* ============ 안내 ============ */
+function showNotice() {
+  $('noticeSrc').href = fair.source;
+  $('notice').hidden = false;
+  $('noticeScrim').hidden = false;
+}
+function hideNotice() {
+  $('notice').hidden = true;
+  $('noticeScrim').hidden = true;
+  localStorage.setItem('fairmap:noticeSeen', '1');
+}
+
 /* ============ 기타 UI ============ */
 function switchView(id) {
   document.querySelectorAll('.view').forEach((v) => v.classList.toggle('active', v.id === id));
@@ -880,6 +926,10 @@ function bindUI() {
   $('menuClose').onclick = closeMenu;
   $('menuScrim').onclick = closeMenu;
 
+  $('noticeOk').onclick = hideNotice;
+  $('noticeScrim').onclick = hideNotice;
+  $('noticeAgain').onclick = () => { closeMenu(); showNotice(); };
+
   $('exportBtn').onclick = exportJson;
   $('exportMdBtn').onclick = exportText;
   $('importFile').onchange = (e) => { if (e.target.files[0]) { importJson(e.target.files[0]); closeMenu(); } };
@@ -892,7 +942,7 @@ function bindUI() {
   };
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { closeSheet(); closeMenu(); }
+    if (e.key === 'Escape') { closeSheet(); closeMenu(); hideNotice(); }
   });
 }
 function centerZoom(s) {

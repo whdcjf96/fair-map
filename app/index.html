@@ -112,6 +112,7 @@
   <button id="exportMdBtn" class="wide-btn">방문 기록 내보내기 (텍스트)</button>
   <label class="wide-btn file-btn">기록 불러오기<input id="importFile" type="file" accept="application/json" hidden></label>
   <button id="editToggle" class="wide-btn">부스 위치 편집 모드</button>
+  <button id="noticeAgain" class="wide-btn">이 앱에 대한 안내 다시 보기</button>
   <button id="resetBtn" class="wide-btn danger">내 기록 전체 삭제</button>
   <p class="fine" id="srcNote"></p>
 </section>
@@ -124,6 +125,24 @@
   <button id="editExport">좌표 내보내기</button>
   <button id="editExit">종료</button>
 </div>
+
+<!-- 처음 열었을 때 한 번 뜨는 안내. 남에게 공유될 수 있으므로 출처와 한계를 먼저 밝힌다. -->
+<div id="noticeScrim" class="scrim" hidden></div>
+<section id="notice" class="sheet" hidden aria-label="안내">
+  <div class="sheet-grip"></div>
+  <h2 class="notice-title">비공식 부스맵입니다</h2>
+  <p class="notice-body">
+    주최 측이 만든 앱이 아니라, 관람객이 편하려고 개인적으로 만든 것입니다.
+    배치도와 참가업체 정보는 공식 홈페이지에서 가져왔습니다.
+  </p>
+  <ul class="notice-list">
+    <li><b>업체명</b>은 좁은 칸에 넣으려고 줄여 표시합니다. 부스를 탭하면 전체 이름이 나옵니다.</li>
+    <li><b>주종 분류와 부스 위치</b>는 자동으로 만든 것이라 틀릴 수 있습니다.</li>
+    <li>중요한 내용은 <b>공식 배치도</b>를 함께 확인해 주세요.</li>
+  </ul>
+  <a id="noticeSrc" class="ext-link" target="_blank" rel="noopener">공식 배치도 보기 ↗</a>
+  <button id="noticeOk" class="wide-btn">확인</button>
+</section>
 
 <div id="toast" class="toast" hidden></div>
 

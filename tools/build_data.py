@@ -43,6 +43,16 @@ def normalize(s: str) -> str:
     return s
 
 
+def is_faithful_short(short: str, name: str) -> bool:
+    """축약 이름이 원래 업체명을 그대로 줄인 것인지 검사한다.
+
+    남에게 공유될 수 있는 화면이므로 업체명을 임의로 바꿔 표기해서는 안 된다.
+    법인격 표기(주식회사 등)를 떼는 것까지는 허용하고, 그 외에는 원문에
+    연속으로 등장하는 부분이어야 한다.
+    """
+    return normalize(short) in normalize(name)
+
+
 def short_fallback(name: str) -> str:
     """축약 이름표가 지정되지 않은 부스용 임시 라벨 — 법인격을 떼고 앞 6자를 쓴다."""
     s = re.sub(r"\(주\)|\(유\)|㈜|주식회사|농업회사법인|영농조합법인|유한회사|영어조합법인", "", name)
@@ -193,6 +203,14 @@ def main() -> None:
         print(f"좌표 없는 부스({len(missing)}): {', '.join(missing)}")
     if unmatched_cells:
         print(f"분류 못한 셀: {', '.join(unmatched_cells)}")
+    unfaithful = [f"{b['booth']} '{b['short']}' ← '{b['name']}'"
+                  for b in doc["booths"]
+                  if b["name"] and not is_faithful_short(b["short"], b["name"])]
+    if unfaithful:
+        print(f"\n경고: 원문에 없는 표현으로 줄인 업체명 {len(unfaithful)}개 "
+              f"— 공유 시 오표기가 됩니다. data/short_labels.json 을 고치세요.")
+        for u in unfaithful:
+            print(f"  {u}")
     cats: dict[str, int] = {}
     for b in doc["booths"]:
         cats[b["category"]] = cats.get(b["category"], 0) + 1

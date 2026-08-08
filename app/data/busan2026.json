@@ -152,7 +152,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_wyI7p9zs_0b63dfffe5f94a831d7c5e49c9c7d26c06dc9b30_600x600.png",
    "officialName": "댕댕이베이커리",
    "category": "안주·푸드",
-   "short": "댕댕이빵"
+   "short": "댕댕이베이커리"
   },
   {
    "booth": "A10",
@@ -266,7 +266,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_mXOK245z_dbd8fb2f02c482e0ca269d25f2cf32c0ebf9d810_600x600.jpg",
    "officialName": "ANES",
    "category": "주류수입·유통",
-   "short": "ANES시오"
+   "short": "ANES 시오"
   },
   {
    "booth": "B03",
@@ -356,7 +356,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_XftLeAId_b9a7718ddae8ecc7a25ca251624211c507688a3f_600x600.png",
    "officialName": "문화재·명인 조옥화 안동소주 (민속주 안동소주)",
    "category": "전통주·막걸리",
-   "short": "조옥화소주"
+   "short": "조옥화 안동소주"
   },
   {
    "booth": "B11",
@@ -464,7 +464,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_eHaRyvW2_82f2f4cb1a6515e74a9ada7d96a6a9a7404a6350_600x600.png",
    "officialName": "젤코바와이너리",
    "category": "와인",
-   "short": "젤코바와인"
+   "short": "젤코바와이너리"
   },
   {
    "booth": "B17",
@@ -590,7 +590,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_jySrJb5h_87759f1080f84d18124dce3525914c0e6151f0e8_600x600.png",
    "officialName": "한국와인 (뱅꼬레 와이너리)",
    "category": "와인",
-   "short": "뱅꼬레와인"
+   "short": "뱅꼬레 와이너리"
   },
   {
    "booth": "B24",
@@ -806,7 +806,7 @@
    "logo": "",
    "officialName": "",
    "category": "안주·푸드",
-   "short": "남아공육포"
+   "short": "남아공 수제 육포"
   },
   {
    "booth": "C03",
@@ -1004,7 +1004,7 @@
    "logo": "",
    "officialName": "",
    "category": "맥주",
-   "short": "코에도맥주"
+   "short": "코에도브루어리"
   },
   {
    "booth": "C15",
@@ -1022,7 +1022,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-66679731597c7311aea05fefb1d3acb6_dDTfWslS_c2d355449f3249ca6ff1903d922c51406e5dd19c_600x600.png",
    "officialName": "브리즈앤스트림 유한회사 농업회사법인",
    "category": "전통주·막걸리",
-   "short": "브리즈스트림"
+   "short": "브리즈앤스트림"
   },
   {
    "booth": "C16",
@@ -1112,7 +1112,7 @@
    "logo": "",
    "officialName": "",
    "category": "안주·푸드",
-   "short": "딸부잣집부각"
+   "short": "딸부잣집김부각"
   },
   {
    "booth": "D06",
@@ -1130,7 +1130,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_4yeflBdX_2aef5e365105b395c832bf25fc7bbee5559bf0c5_600x600.png",
    "officialName": "수도산 와이너리",
    "category": "와인",
-   "short": "수도산와인"
+   "short": "수도산와이너리"
   },
   {
    "booth": "D07",
@@ -1310,7 +1310,7 @@
    "logo": "",
    "officialName": "",
    "category": "전통주·막걸리",
-   "short": "내외증류소"
+   "short": "내외디스틸러리"
   },
   {
    "booth": "E03",
@@ -1904,7 +1904,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_EyHJFKOh_5a475cd300e3f193dc92589cf96125700ebff558_600x600.png",
    "officialName": "고도리 와이너리",
    "category": "와인",
-   "short": "고도리와인"
+   "short": "고도리 와이너리"
   },
   {
    "booth": "F08",
@@ -2084,7 +2084,7 @@
    "logo": "https://bilie.kr/data/file/n_partner/thumb-1aab669110acecfede22dd8991b2662c_dyvi0eBH_ace92e051e8378cda237da13eca402da6284727f_600x600.png",
    "officialName": "꼬마루",
    "category": "안주·푸드",
-   "short": "꼬마루육포"
+   "short": "꼬마루수제육포"
   },
   {
    "booth": "F21",
@@ -2552,7 +2552,7 @@
    "logo": "",
    "officialName": "",
    "category": "안주·푸드",
-   "short": "케빈스크랩"
+   "short": "케빈스보일링크랩"
   },
   {
    "booth": "H01",

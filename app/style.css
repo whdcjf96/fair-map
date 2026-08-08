@@ -98,8 +98,9 @@ main { flex: 1; min-height: 0; position: relative; }
 .booth.dim .memo, .booth.dim .lbl { display: none; }
 
 /* ---------- 지도 위 업체명 ---------- */
+/* 이름표는 자기 글자 크기가 화면에서 읽을 만해지는 배율부터 나타난다(t1이 가장 먼저). */
 .lbl { display: none; }
-body.names .lbl {
+body.names1 .lbl.t1, body.names2 .lbl.t2, body.names3 .lbl.t3 {
   display: flex; position: absolute; inset: 1px;
   align-items: center; justify-content: center; text-align: center;
   line-height: 1.1; font-weight: 700; letter-spacing: -.3px;
@@ -268,6 +269,15 @@ body.editing .booth.sel { outline: 2px solid #ff3b6b; }
   position: absolute; right: -5px; bottom: -5px; width: 13px; height: 13px;
   background: #ff3b6b; border: 2px solid #fff; border-radius: 3px; cursor: nwse-resize;
 }
+
+/* ---------- 첫 실행 안내 ---------- */
+.notice-title { font-size: 18px; margin: 4px 0 10px; }
+.notice-body { font-size: 14px; color: var(--text-dim); margin: 0 0 12px; line-height: 1.6; }
+.notice-list { margin: 0 0 14px; padding-left: 18px; font-size: 13.5px; color: var(--text-dim); line-height: 1.65; }
+.notice-list li { margin-bottom: 6px; }
+.notice-list b, .notice-body b { color: var(--text); font-weight: 700; }
+#notice .ext-link { display: block; margin-bottom: 4px; }
+#noticeOk { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 700; }
 
 .toast {
   position: fixed; left: 50%; bottom: calc(74px + var(--safe-b)); transform: translateX(-50%);
