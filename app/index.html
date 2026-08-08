@@ -4,6 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#023a95">
+<!-- 이 앱은 외부 스크립트·폰트·이미지를 하나도 쓰지 않는다. 그 사실을 브라우저에 못박아,
+     혹시라도 코드가 주입되더라도 실행되거나 데이터가 밖으로 나가지 못하게 한다.
+     (GitHub Pages는 응답 헤더를 못 바꾸므로 meta 태그로 선언한다) -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  connect-src 'self';
+  manifest-src 'self';
+  worker-src 'self';
+  base-uri 'none';
+  form-action 'none'">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <!-- iOS 홈 화면 앱은 manifest가 아니라 아래 두 줄을 본다.

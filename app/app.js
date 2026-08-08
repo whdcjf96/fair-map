@@ -951,5 +951,9 @@ function centerZoom(s) {
 }
 
 init().catch((e) => {
-  document.body.innerHTML = `<p style="padding:24px">데이터를 불러오지 못했습니다: ${e.message}</p>`;
+  // 오류 메시지를 그대로 HTML로 심지 않는다 — 문자열 하나라도 마크업으로 해석될 여지를 남기지 않는다.
+  const p = document.createElement('p');
+  p.style.padding = '24px';
+  p.textContent = `데이터를 불러오지 못했습니다: ${e.message}`;
+  document.body.replaceChildren(p);
 });
