@@ -436,19 +436,116 @@ function fitBoth(codeA, codeB) {
 }
 
 /* ============ 포인터 조작 (팬 / 핀치 / 탭) ============ */
+
+// 기본 배율에서 부스 한 칸은 화면상 14px 남짓이라 손가락으로 정확히 누르기 어렵다.
+// 빗나가도 이 반경(화면 기준 px) 안에서 가장 가까운 부스를 집어준다.
+// 축소할수록 여유가 커지지만, 라운지 한복판을 눌렀는데 멀리 있는 부스가 잡히지 않도록
+// 이미지 좌표 기준 상한도 함께 둔다(부스 한 칸이 37px).
+const TAP_SLACK_PX = 26;
+const TAP_SLACK_MAX_IMG = 55;
+
+/** 화면 좌표에 가장 가까운 부스. 여유 반경을 벗어나면 null. */
+function boothNear(clientX, clientY) {
+  const vp = $('viewport').getBoundingClientRect();
+  const ix = (clientX - vp.left - tx) / scale;
+  const iy = (clientY - vp.top - ty) / scale;
+  const q = query.trim().toLowerCase();
+  const filtering = !!(q || filterCat || filterMark);
+  let best = null, bestD = Infinity;
+  for (const b of booths) {
+    for (const r of b.rects) {
+      // 사각형까지의 거리 — 안쪽이면 0
+      const dx = Math.max(r.x - ix, 0, ix - (r.x + r.w));
+      const dy = Math.max(r.y - iy, 0, iy - (r.y + r.h));
+      let d = Math.hypot(dx, dy);
+      // 검색·필터 중이면 걸린 부스를 먼저 집는다(흐려진 칸에 잘못 붙지 않게).
+      if (filtering && !matches(b, q)) d += 14;
+      if (d < bestD) { bestD = d; best = b.booth; }
+    }
+  }
+  const slack = Math.min(TAP_SLACK_PX / scale, TAP_SLACK_MAX_IMG);
+  return bestD <= slack ? best : null;
+}
+
+/** 손가락이 닿는 즉시 어느 칸이 잡혔는지 보여준다. */
+let pressed = null;
+function setPressed(code) {
+  if (pressed === code) return;
+  for (const el of els.get(pressed) || []) el.classList.remove('press');
+  pressed = code;
+  for (const el of els.get(pressed) || []) el.classList.add('press');
+  // 안드로이드에서는 짧은 진동으로도 알린다(iOS Safari는 지원하지 않아 무시된다).
+  if (code && navigator.vibrate) navigator.vibrate(8);
+}
+
+/* 손을 뗀 뒤 지도가 관성으로 미끄러지게 한다 — 지도 앱처럼 손에 붙는 느낌을 낸다. */
+
+// 마지막 이동 몇 개를 기록해 손 뗀 순간의 속도를 낸다.
+// 이벤트 하나만 보고 계산하면 고주사율 화면에서 간격이 0에 가까워져 속도가 0이거나
+// 터무니없이 커진다. 최근 100ms 구간 전체로 재면 그런 튐이 사라진다.
+const VEL_WINDOW_MS = 100;
+const VEL_MAX = 3;                  // px/ms — 과하게 튀는 플릭 제한
+let track = [];
+let glideId = null;
+
+function trackMove(t) {
+  track.push({ x: tx, y: ty, t });
+  while (track.length > 2 && t - track[0].t > VEL_WINDOW_MS) track.shift();
+}
+function releaseVelocity() {
+  if (track.length < 2) return { x: 0, y: 0 };
+  const last = track[track.length - 1];
+  const first = track[0];
+  const dt = last.t - first.t;
+  if (dt <= 0) return { x: 0, y: 0 };
+  const clamp = (v) => Math.max(-VEL_MAX, Math.min(VEL_MAX, v));
+  return { x: clamp((last.x - first.x) / dt), y: clamp((last.y - first.y) / dt) };
+}
+
+function stopGlide() {
+  if (glideId) { cancelAnimationFrame(glideId); glideId = null; }
+}
+function startGlide() {
+  const v = releaseVelocity();
+  if (Math.hypot(v.x, v.y) < 0.15) return;   // 살짝 움직인 정도면 미끄러뜨리지 않는다
+  let vx = v.x, vy = v.y, last = performance.now();
+  const step = (now) => {
+    const dt = Math.min(now - last, 32);
+    last = now;
+    tx += vx * dt;
+    ty += vy * dt;
+    const before = { x: tx, y: ty };
+    clampPan();
+    // 가장자리에 부딪히면 그 방향 속도를 죽인다
+    if (tx !== before.x) vx = 0;
+    if (ty !== before.y) vy = 0;
+    applyTransform();
+    const decay = Math.pow(0.9945, dt);  // 프레임 간격이 달라도 감속이 일정하도록
+    vx *= decay; vy *= decay;
+    glideId = Math.hypot(vx, vy) > 0.02 ? requestAnimationFrame(step) : null;
+  };
+  glideId = requestAnimationFrame(step);
+}
+
 function bindMapGestures() {
   const vp = $('viewport');
   const pts = new Map();
   let start = null, moved = false, pinch = null;
 
   vp.addEventListener('pointerdown', (e) => {
-    vp.setPointerCapture(e.pointerId);
+    // 캡처는 손가락이 지도 밖으로 나가도 계속 따라오게 해줄 뿐, 없어도 동작해야 한다.
+    // 첫 줄에서 예외가 나면 아래 제스처 처리가 통째로 죽으므로 감싸둔다.
+    try { vp.setPointerCapture(e.pointerId); } catch { /* 있으면 좋은 정도 */ }
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
     moved = false;
+    stopGlide();
     if (pts.size === 1) {
       start = { x: e.clientX, y: e.clientY, tx, ty, target: e.target, t: Date.now() };
+      track = [{ x: tx, y: ty, t: e.timeStamp }];
       if (editing) editPointerDown(e);
+      else setPressed(boothNear(e.clientX, e.clientY));
     } else if (pts.size === 2) {
+      setPressed(null);
       const [a, b] = [...pts.values()];
       pinch = { d: dist(a, b), cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, s: scale };
     }
@@ -467,20 +564,26 @@ function bindMapGestures() {
     }
     if (!start) return;
     const dx = e.clientX - start.x, dy = e.clientY - start.y;
-    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) { moved = true; setPressed(null); }
     if (editing && editDrag) { editPointerMove(e); return; }
     tx = start.tx + dx; ty = start.ty + dy;
     clampPan();
     applyTransform();
+    trackMove(e.timeStamp);   // 손을 뗀 뒤 미끄러뜨리려면 최근 궤적이 필요하다
   });
 
   const end = (e) => {
     pts.delete(e.pointerId);
     if (pts.size < 2) pinch = null;
     if (editing && editDrag) { editPointerUp(); return; }
-    if (!moved && start && start.target.classList.contains('booth')) {
-      openSheet(start.target.dataset.booth);
+    if (!moved && start) {
+      // 정확히 칸을 못 눌러도 가장 가까운 부스를 연다.
+      const code = boothNear(start.x, start.y);
+      if (code) openSheet(code);
+    } else if (moved && pts.size === 0) {
+      startGlide();
     }
+    setPressed(null);
     if (pts.size === 0) start = null;
   };
   vp.addEventListener('pointerup', end);
@@ -861,6 +964,43 @@ function bindEditor() {
   $('editExit').onclick = () => { setEditing(false); renderOverlay(); refresh(); renderHere(); };
 }
 
+/* ============ 시트 아래로 밀어 닫기 ============ */
+/** 위쪽 손잡이가 끌 수 있게 생겼으니 실제로 끌리게 만든다.
+ *  내용이 스크롤 가능하므로, 맨 위에 있을 때만 시트 끌기로 넘긴다. */
+function bindSwipeToClose(sheet, onClose) {
+  let sy = 0, dy = 0, dragging = false;
+
+  sheet.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('textarea, select, input, button, a')) return;
+    if (sheet.scrollTop > 0) return;
+    sy = e.clientY; dy = 0; dragging = true;
+    sheet.style.transition = 'none';
+  });
+
+  sheet.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    dy = e.clientY - sy;
+    if (dy < 0) dy = 0;                       // 위로는 안 끌린다
+    // 따라오는 움직임을 먼저 그린다 — 포인터 캡처가 실패해도 피드백은 끊기지 않게.
+    sheet.style.transform = `translateY(${dy}px)`;
+    if (dy > 6) {
+      try { sheet.setPointerCapture(e.pointerId); } catch { /* 캡처는 있으면 좋은 정도 */ }
+    }
+  });
+
+  const finish = () => {
+    if (!dragging) return;
+    dragging = false;
+    sheet.style.transition = 'transform .2s ease-out';
+    sheet.style.transform = '';
+    // 시트 높이의 1/4 넘게 내렸으면 닫는다
+    if (dy > Math.min(120, sheet.offsetHeight * 0.25)) onClose();
+    dy = 0;
+  };
+  sheet.addEventListener('pointerup', finish);
+  sheet.addEventListener('pointercancel', finish);
+}
+
 /* ============ 안내 ============ */
 function showNotice() {
   $('noticeSrc').href = fair.source;
@@ -925,6 +1065,10 @@ function bindUI() {
   const closeMenu = () => { $('menu').hidden = true; $('menuScrim').hidden = true; };
   $('menuClose').onclick = closeMenu;
   $('menuScrim').onclick = closeMenu;
+
+  bindSwipeToClose($('sheet'), closeSheet);
+  bindSwipeToClose($('menu'), closeMenu);
+  bindSwipeToClose($('notice'), hideNotice);
 
   $('noticeOk').onclick = hideNotice;
   $('noticeScrim').onclick = hideNotice;
