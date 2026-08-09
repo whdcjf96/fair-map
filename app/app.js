@@ -117,10 +117,13 @@ function rebuildBooths() {
 }
 
 /* ============ 오버레이 ============ */
+let tierCount = {};
+
 function renderOverlay() {
   const ov = $('overlay');
   ov.innerHTML = '';
   els = new Map();
+  tierCount = {};
 
   for (const f of fair.facilities || []) {
     const d = document.createElement('div');
@@ -144,8 +147,10 @@ function renderOverlay() {
         const lay = layoutLabel(b.short || b.booth, r.w, r.h);
         const need = MIN_READABLE_PX / lay.size;
         const tier = LABEL_TIERS.findIndex((t) => need <= t);
+        const n = tier < 0 ? LABEL_TIERS.length : tier + 1;
+        tierCount[n] = (tierCount[n] || 0) + 1;
         const lbl = document.createElement('span');
-        lbl.className = 'lbl t' + (tier < 0 ? LABEL_TIERS.length : tier + 1);
+        lbl.className = 'lbl t' + n;
         lbl.textContent = lay.text;
         lbl.style.fontSize = lay.size + 'px';
         d.appendChild(lbl);
@@ -243,10 +248,10 @@ function paintAll() {
       el.classList.toggle('sel', selected === b.booth);
       el.classList.toggle('hit', filtering && hit);
       el.classList.toggle('dim', filtering && !hit);
-      // 이름표 모드에서는 칸을 카테고리 색으로 덮어 인쇄된 부스번호를 가린다.
-      el.style.background = labelsOn
-        ? (visited ? VISITED_COLOR : (CAT_COLOR[b.category] || CAT_COLOR['기타']))
-        : '';
+      // 카테고리 색은 칸 위에 덧칠한다. 이름이 안 뜨는 배율에서는 이 덧칠을 옅게 해
+      // 원본에 인쇄된 부스번호가 비쳐 보이게 한다(CSS에서 처리).
+      el.style.setProperty('--fill',
+        visited ? VISITED_COLOR : (CAT_COLOR[b.category] || CAT_COLOR['기타']));
       let mark = el.querySelector('.memo');
       if (memo && !mark) {
         mark = document.createElement('span');
@@ -263,18 +268,29 @@ function paintAll() {
 }
 
 let lastHits = null;
+/** 현재 배율에서 아직 안 뜬 이름표 수 */
+function hiddenLabelCount() {
+  return LABEL_TIERS.reduce(
+    (n, t, i) => n + (scale < t ? (tierCount[i + 1] || 0) : 0), 0);
+}
 /** 지도 왼쪽 아래 안내문 — 필터 결과 수, 또는 이름표가 왜 안 보이는지. */
 function updateHint() {
   const cond = [query.trim() && `"${query.trim()}"`, filterCat, filterMark]
     .filter(Boolean).join(' · ');
+  const hint = $('hint');
   if (lastHits !== null) {
-    $('hint').textContent = `${cond} — ${lastHits}개 부스`;
-  } else if (labelsOn && scale < LABEL_TIERS[LABEL_TIERS.length - 1]) {
-    $('hint').textContent = scale < LABEL_TIERS[0]
-      ? '확대하면 업체명이 보입니다'
-      : '더 확대하면 나머지 업체명도 보입니다';
+    hint.textContent = `${cond} — ${lastHits}개 부스`;
+    hint.classList.remove('tappable');
+  } else if (labelsOn && hiddenLabelCount() > 8) {
+    // 얼마나 확대해야 하는지 짐작하게 두지 말고, 눌러서 바로 그 배율로 보내준다.
+    // 남은 이름표가 몇 개뿐이면 굳이 안내하지 않는다.
+    hint.textContent = scale < LABEL_TIERS[0]
+      ? '👆 눌러서 업체명 보기'
+      : '👆 눌러서 나머지 업체명까지 보기';
+    hint.classList.add('tappable');
   } else {
-    $('hint').textContent = '';
+    hint.textContent = '';
+    hint.classList.remove('tappable');
   }
 }
 
@@ -558,7 +574,15 @@ function bindMapGestures() {
     if (pts.size >= 2 && pinch) {
       const [a, b] = [...pts.values()];
       const d = dist(a, b);
-      if (pinch.d > 0) zoomAt(pinch.s * (d / pinch.d), pinch.cx, pinch.cy);
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      // 확대 기준점을 현재 두 손가락 사이로 잡고, 손이 이동한 만큼 지도도 같이 끌어준다.
+      // 기준점을 시작 위치에 고정하면 손가락과 지도가 어긋나 뻑뻑하게 느껴진다.
+      if (pinch.d > 0) zoomAt(pinch.s * (d / pinch.d), mx, my);
+      tx += mx - pinch.cx;
+      ty += my - pinch.cy;
+      pinch.cx = mx; pinch.cy = my;
+      clampPan();
+      applyTransform();
       moved = true;
       return;
     }
@@ -1053,6 +1077,12 @@ function bindUI() {
   });
 
   $('labelToggle').onclick = () => setLabels(!labelsOn);
+  $('hint').onclick = () => {
+    if (!$('hint').classList.contains('tappable')) return;
+    // 지금 배율에서 아직 안 뜬 이름표가 보이는 단계까지 한 번에 올린다.
+    const next = LABEL_TIERS.find((t) => scale < t) || LABEL_TIERS[LABEL_TIERS.length - 1];
+    centerZoom(next * 1.05);
+  };
   $('goHere').onclick = () => { if (store.here) focusBooth(store.here); };
   $('zoomIn').onclick = () => centerZoom(scale * 1.4);
   $('zoomOut').onclick = () => centerZoom(scale / 1.4);
