@@ -1,6 +1,6 @@
 /* 오프라인 지원 — 전시장 네트워크가 끊겨도 앱과 배치도가 뜨도록 캐시한다.
    앱 파일을 고칠 때는 CACHE 버전을 올려야 새 파일이 반영된다. */
-const CACHE = 'fairmap-v22';
+const CACHE = 'fairmap-v23';
 const ASSETS = [
   './',
   'index.html',

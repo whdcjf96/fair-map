@@ -121,24 +121,13 @@
   <div class="sheet-grip"></div>
   <div class="sheet-head"><h2>메뉴</h2><button id="menuClose" class="icon-btn" aria-label="닫기">✕</button></div>
   <div id="stats" class="stats"></div>
-  <button id="exportBtn" class="wide-btn">내 기록 내보내기 (JSON)</button>
-  <button id="exportMdBtn" class="wide-btn">방문 기록 내보내기 (텍스트)</button>
-  <label class="wide-btn file-btn">기록 불러오기<input id="importFile" type="file" accept="application/json" hidden></label>
-  <button id="editToggle" class="wide-btn">부스 위치 편집 모드</button>
+  <button id="exportBtn" class="wide-btn">기록 백업하기</button>
+  <label class="wide-btn file-btn">백업에서 되살리기<input id="importFile" type="file" accept="application/json" hidden></label>
   <button id="noticeAgain" class="wide-btn">이 앱에 대한 안내 다시 보기</button>
   <button id="resetBtn" class="wide-btn danger">내 기록 전체 삭제</button>
   <p class="fine"><span id="appVer"></span> · 새 버전이 올라오면 자동으로 갱신됩니다.</p>
   <p class="fine" id="srcNote"></p>
 </section>
-
-<!-- 편집 모드 툴바 -->
-<div id="editBar" hidden>
-  <span id="editInfo">편집 모드</span>
-  <button id="editAdd">＋부스 추가</button>
-  <button id="editDelete">삭제</button>
-  <button id="editExport">좌표 내보내기</button>
-  <button id="editExit">종료</button>
-</div>
 
 <!-- 처음 열었을 때 한 번 뜨는 안내. 남에게 공유될 수 있으므로 출처와 한계를 먼저 밝힌다. -->
 <div id="noticeScrim" class="scrim" hidden></div>

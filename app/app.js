@@ -24,7 +24,7 @@ let booths = [];              // 화면에 쓰는 부스 배열(사용자 보정
 let boothByCode = new Map();
 // 사용자 데이터. here는 "지금 내가 서 있는 부스" 번호.
 // 실내라 GPS가 못 잡으니 사용자가 직접 찍는다 — 대신 부스 단위로 정확하다.
-let store = { notes: {}, geom: {}, cats: {}, here: null };
+let store = { notes: {}, cats: {}, here: null };
 let metersPerPx = 0;
 let els = new Map();          // 부스코드 -> 오버레이 DOM
 
@@ -43,7 +43,7 @@ function loadStore() {
     const raw = localStorage.getItem(storageKey());
     if (raw) {
       const p = JSON.parse(raw);
-      store = { notes: p.notes || {}, geom: p.geom || {}, cats: p.cats || {}, here: p.here || null };
+      store = { notes: p.notes || {}, cats: p.cats || {}, here: p.here || null };
     }
   } catch (e) { console.warn('저장된 기록을 읽지 못했습니다', e); }
 }
@@ -115,23 +115,12 @@ function setupUpdates() {
   }).catch(() => {});
 }
 
-/** 원본 부스 데이터에 사용자 보정(좌표·카테고리)을 얹어 booths를 다시 만든다. */
+/** 원본 부스 데이터에 사용자가 고친 카테고리를 얹어 booths를 다시 만든다. */
 function rebuildBooths() {
-  booths = fair.booths.map((b) => {
-    const g = store.geom[b.booth];
-    return {
-      ...b,
-      rects: g ? g.rects : b.rects,
-      category: store.cats[b.booth] || b.category,
-    };
-  });
-  // 편집 모드에서 새로 추가한 부스
-  for (const [code, g] of Object.entries(store.geom)) {
-    if (!fair.booths.some((b) => b.booth === code)) {
-      booths.push({ booth: code, name: g.name || code, rects: g.rects, desc: '', url: '',
-        category: store.cats[code] || '기타' });
-    }
-  }
+  booths = fair.booths.map((b) => ({
+    ...b,
+    category: store.cats[b.booth] || b.category,
+  }));
   boothByCode = new Map(booths.map((b) => [b.booth, b]));
 }
 
@@ -577,8 +566,7 @@ function bindMapGestures() {
     if (pts.size === 1) {
       start = { x: e.clientX, y: e.clientY, tx, ty, target: e.target, t: Date.now() };
       track = [{ x: tx, y: ty, t: e.timeStamp }];
-      if (editing) editPointerDown(e);
-      else setPressed(boothNear(e.clientX, e.clientY));
+      setPressed(boothNear(e.clientX, e.clientY));
     } else if (pts.size === 2) {
       setPressed(null);
       const [a, b] = [...pts.values()];
@@ -608,7 +596,6 @@ function bindMapGestures() {
     if (!start) return;
     const dx = e.clientX - start.x, dy = e.clientY - start.y;
     if (Math.abs(dx) > 4 || Math.abs(dy) > 4) { moved = true; setPressed(null); }
-    if (editing && editDrag) { editPointerMove(e); return; }
     tx = start.tx + dx; ty = start.ty + dy;
     clampPan();
     applyTransform();
@@ -618,7 +605,6 @@ function bindMapGestures() {
   const end = (e) => {
     pts.delete(e.pointerId);
     if (pts.size < 2) pinch = null;
-    if (editing && editDrag) { editPointerUp(); return; }
     if (!moved && start) {
       // 정확히 칸을 못 눌러도 가장 가까운 부스를 연다.
       const code = boothNear(start.x, start.y);
@@ -876,135 +862,18 @@ function exportJson() {
     JSON.stringify({ fair: fair.id, exportedAt: new Date().toISOString(), ...store }, null, 1),
     'application/json');
 }
-function exportText() {
-  const lines = [`# ${fair.title} 방문 기록`, ''];
-  const rated = booths
-    .filter((b) => hasData(store.notes[b.booth]))
-    .sort((a, b) => (store.notes[b.booth].rating || 0) - (store.notes[a.booth].rating || 0));
-  if (!rated.length) { toast('기록된 부스가 없습니다'); return; }
-  for (const b of rated) {
-    const n = store.notes[b.booth];
-    lines.push(`## ${b.booth} ${b.name}`);
-    lines.push(`- 카테고리: ${b.category}`);
-    if (n.rating) lines.push(`- 별점: ${'★'.repeat(n.rating)}${'☆'.repeat(5 - n.rating)}`);
-    if (n.tags.length) lines.push(`- 상태: ${n.tags.join(', ')}`);
-    if (n.memo && n.memo.trim()) lines.push(`- 메모: ${n.memo.trim()}`);
-    if (b.url) lines.push(`- 링크: ${b.url}`);
-    lines.push('');
-  }
-  download(`${fair.id}-기록.md`, lines.join('\n'), 'text/markdown');
-}
 function importJson(file) {
   const r = new FileReader();
   r.onload = () => {
     try {
       const p = JSON.parse(r.result);
       if (!p.notes) throw new Error('형식이 맞지 않습니다');
-      store = { notes: p.notes || {}, geom: p.geom || {}, cats: p.cats || {}, here: p.here || null };
+      store = { notes: p.notes || {}, cats: p.cats || {}, here: p.here || null };
       saveStore(); rebuildBooths(); renderOverlay(); refresh(); renderHere();
       toast('기록을 불러왔습니다');
     } catch (e) { toast('불러오기 실패: ' + e.message); }
   };
   r.readAsText(file);
-}
-
-/* ============ 편집 모드 (부스 좌표 보정) ============ */
-let editing = false, editDrag = null, editTarget = null;
-
-function setEditing(on) {
-  editing = on;
-  document.body.classList.toggle('editing', on);
-  $('editBar').hidden = !on;
-  if (!on) { editTarget = null; document.querySelectorAll('.handle').forEach((h) => h.remove()); }
-  updateEditInfo();
-}
-function updateEditInfo() {
-  $('editInfo').textContent = editTarget
-    ? `선택: ${editTarget.dataset.booth} — 끌어서 이동, 모서리로 크기 조절`
-    : '편집: 부스를 탭해 선택하세요';
-}
-function editPointerDown(e) {
-  if (e.target.classList.contains('handle')) {
-    const r = curRect(editTarget);
-    editDrag = { mode: 'resize', sx: e.clientX, sy: e.clientY, ...r };
-    return;
-  }
-  if (e.target.classList.contains('booth')) {
-    selectEdit(e.target);
-    const r = curRect(editTarget);
-    editDrag = { mode: 'move', sx: e.clientX, sy: e.clientY, ...r };
-  } else {
-    selectEdit(null);
-  }
-}
-function editPointerMove(e) {
-  if (!editDrag || !editTarget) return;
-  const dx = (e.clientX - editDrag.sx) / scale;
-  const dy = (e.clientY - editDrag.sy) / scale;
-  if (editDrag.mode === 'move') {
-    editTarget.style.left = Math.round(editDrag.x + dx) + 'px';
-    editTarget.style.top = Math.round(editDrag.y + dy) + 'px';
-  } else {
-    editTarget.style.width = Math.max(8, Math.round(editDrag.w + dx)) + 'px';
-    editTarget.style.height = Math.max(8, Math.round(editDrag.h + dy)) + 'px';
-  }
-}
-function editPointerUp() {
-  if (editDrag && editTarget) commitEdit();
-  editDrag = null;
-}
-function curRect(el) {
-  return { x: parseFloat(el.style.left), y: parseFloat(el.style.top),
-    w: parseFloat(el.style.width), h: parseFloat(el.style.height) };
-}
-function selectEdit(el) {
-  document.querySelectorAll('.handle').forEach((h) => h.remove());
-  document.querySelectorAll('.booth.sel').forEach((b) => b.classList.remove('sel'));
-  editTarget = el;
-  if (el) {
-    el.classList.add('sel');
-    const h = document.createElement('div');
-    h.className = 'handle';
-    el.appendChild(h);
-  }
-  updateEditInfo();
-}
-/** 편집 중인 부스의 모든 사각형을 저장소에 반영 */
-function commitEdit() {
-  const code = editTarget.dataset.booth;
-  const rects = [...els.get(code)].map(curRect);
-  store.geom[code] = { rects, name: (boothByCode.get(code) || {}).name };
-  saveStore();
-  rebuildBooths();
-}
-
-function bindEditor() {
-  $('editAdd').onclick = () => {
-    const code = prompt('추가할 부스 번호 (예: J01)');
-    if (!code) return;
-    const c = code.trim().toUpperCase();
-    if (boothByCode.has(c)) { toast('이미 있는 부스입니다'); return; }
-    const name = prompt('업체명 (비워도 됩니다)') || c;
-    const vp = $('viewport');
-    const x = Math.round((vp.clientWidth / 2 - tx) / scale) - 18;
-    const y = Math.round((vp.clientHeight / 2 - ty) / scale) - 18;
-    store.geom[c] = { rects: [{ x, y, w: 37, h: 37 }], name };
-    saveStore(); rebuildBooths(); renderOverlay(); refresh();
-    toast(`${c} 추가됨 — 끌어서 위치를 맞추세요`);
-  };
-  $('editDelete').onclick = () => {
-    if (!editTarget) { toast('삭제할 부스를 먼저 선택하세요'); return; }
-    const code = editTarget.dataset.booth;
-    if (!confirm(`${code} 의 위치 보정을 초기화할까요?`)) return;
-    delete store.geom[code];
-    saveStore(); rebuildBooths(); renderOverlay(); refresh(); renderHere();
-    selectEdit(null);
-  };
-  $('editExport').onclick = () => {
-    const out = booths.map((b) => ({ booth: b.booth, name: b.name, rects: b.rects }));
-    download(`${fair.id}-좌표.json`, JSON.stringify(out, null, 1), 'application/json');
-  };
-  $('editExit').onclick = () => { setEditing(false); renderOverlay(); refresh(); renderHere(); };
 }
 
 /* ============ 시트 아래로 밀어 닫기 ============ */
@@ -1090,7 +959,6 @@ function renderStats() {
 
 function bindUI() {
   bindMapGestures();
-  bindEditor();
 
   const search = $('search');
   search.addEventListener('input', () => {
@@ -1139,12 +1007,10 @@ function bindUI() {
   $('noticeAgain').onclick = () => { closeMenu(); showNotice(); };
 
   $('exportBtn').onclick = exportJson;
-  $('exportMdBtn').onclick = exportText;
   $('importFile').onchange = (e) => { if (e.target.files[0]) { importJson(e.target.files[0]); closeMenu(); } };
-  $('editToggle').onclick = () => { closeMenu(); switchView('mapView'); setEditing(true); };
   $('resetBtn').onclick = () => {
     if (!confirm('메모·별점·상태를 모두 지웁니다. 계속할까요?')) return;
-    store = { notes: {}, geom: {}, cats: {}, here: null };
+    store = { notes: {}, cats: {}, here: null };
     saveStore(); rebuildBooths(); renderOverlay(); refresh(); renderHere(); closeMenu();
     toast('기록을 모두 삭제했습니다');
   };

@@ -286,33 +286,6 @@ textarea, select {
 .stats { font-size: 13px; color: var(--text-dim); background: var(--surface-2); border-radius: 10px; padding: 10px 12px; margin: 6px 0 4px; }
 .fine { font-size: 11px; color: var(--text-dim); margin-top: 14px; overflow-wrap: anywhere; }
 
-/* ---------- 편집 모드 ---------- */
-#editBar {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
-  background: #1c2740; color: #fff; display: flex; gap: 6px; align-items: center;
-  padding: 8px 10px calc(8px + var(--safe-b)); font-size: 12px; overflow-x: auto;
-}
-#editBar span { flex: 1; min-width: 90px; }
-#editBar button {
-  border: 1px solid #44557a; background: #2a3854; color: #fff;
-  border-radius: 8px; padding: 7px 10px; font-size: 12px; cursor: pointer; font-family: inherit; white-space: nowrap;
-}
-body.editing .booth { outline: 1px dashed rgba(255,60,110,.85); }
-body.editing .booth.sel { outline: 2px solid #ff3b6b; }
-.handle {
-  position: absolute; right: -5px; bottom: -5px; width: 13px; height: 13px;
-  background: #ff3b6b; border: 2px solid #fff; border-radius: 3px; cursor: nwse-resize;
-}
-
-/* ---------- 첫 실행 안내 ---------- */
-.notice-title { font-size: 18px; margin: 4px 0 10px; }
-.notice-body { font-size: 14px; color: var(--text-dim); margin: 0 0 12px; line-height: 1.6; }
-.notice-list { margin: 0 0 14px; padding-left: 18px; font-size: 13.5px; color: var(--text-dim); line-height: 1.65; }
-.notice-list li { margin-bottom: 6px; }
-.notice-list b, .notice-body b { color: var(--text); font-weight: 700; }
-#notice .ext-link { display: block; margin-bottom: 4px; }
-#noticeOk { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 700; }
-
 .toast {
   position: fixed; left: 50%; bottom: calc(74px + var(--safe-b)); transform: translateX(-50%);
   background: #10233f; color: #fff; padding: 9px 15px; border-radius: 999px;
