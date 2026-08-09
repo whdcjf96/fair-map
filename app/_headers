@@ -1,0 +1,12 @@
+# Cloudflare Pages 전용 응답 헤더 설정.
+# GitHub Pages는 헤더를 못 바꿔서 CSP를 index.html의 meta 태그로 넣었는데,
+# meta 방식에는 frame-ancestors가 먹지 않는다(= 남의 페이지 iframe에 박히는 걸 못 막는다).
+# 여기서는 진짜 헤더로 내보낼 수 있어 그 구멍을 막는다.
+# 이 파일은 GitHub Pages에서는 그냥 텍스트 파일로 서빙될 뿐 아무 영향이 없다.
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000
