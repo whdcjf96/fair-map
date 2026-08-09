@@ -91,9 +91,28 @@ async function init() {
   if (img.complete) fitToScreen(); else img.onload = fitToScreen;
   window.addEventListener('resize', () => { if (scale <= fitScale * 1.02) fitToScreen(); });
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
+  if ('serviceWorker' in navigator) setupUpdates();
+}
+
+/** 새 버전이 올라왔을 때 스스로 갈아입게 한다.
+ *
+ * 오프라인 우선이라 새 파일을 받아놔도 다음 실행에야 반영된다. 그러면 사용자는
+ * 고친 게 반영된 건지 알 수 없다. 새 서비스 워커가 제어권을 넘겨받는 순간
+ * 한 번만 새로고침해 바로 보이게 한다.
+ */
+function setupUpdates() {
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    // 첫 방문(이전 제어자가 없던 경우)에는 새로고침할 이유가 없다.
+    if (!hadController || reloading) return;
+    reloading = true;
+    location.reload();
+  });
+  navigator.serviceWorker.register('sw.js').then((reg) => {
+    // 앱을 오래 켜둔 채 박람회를 도는 경우를 위해 가끔 새 버전을 확인한다.
+    setInterval(() => reg.update().catch(() => {}), 30 * 60 * 1000);
+  }).catch(() => {});
 }
 
 /** 원본 부스 데이터에 사용자 보정(좌표·카테고리)을 얹어 booths를 다시 만든다. */
@@ -1051,6 +1070,16 @@ function toast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { t.hidden = true; }, 2200);
 }
+/** 지금 돌고 있는 버전을 보여준다 — 새 배포가 반영됐는지 눈으로 확인할 수 있게. */
+async function currentVersion() {
+  try {
+    const keys = await caches.keys();
+    const hit = keys.find((k) => k.startsWith('fairmap-'));
+    if (hit) return hit.replace('fairmap-', '');
+  } catch { /* 캐시를 못 읽으면 표시만 생략한다 */ }
+  return '?';
+}
+
 function renderStats() {
   const total = booths.length;
   const star = booths.filter((b) => (store.notes[b.booth] || { tags: [] }).tags.includes('관심')).length;
@@ -1091,7 +1120,12 @@ function bindUI() {
   $('sheetClose').onclick = closeSheet;
   $('sheetScrim').onclick = closeSheet;
 
-  $('menuBtn').onclick = () => { renderStats(); $('menu').hidden = false; $('menuScrim').hidden = false; };
+  $('menuBtn').onclick = async () => {
+    renderStats();
+    $('menu').hidden = false;
+    $('menuScrim').hidden = false;
+    $('appVer').textContent = `버전 ${await currentVersion()}`;
+  };
   const closeMenu = () => { $('menu').hidden = true; $('menuScrim').hidden = true; };
   $('menuClose').onclick = closeMenu;
   $('menuScrim').onclick = closeMenu;
